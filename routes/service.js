@@ -105,7 +105,7 @@ serviceRouter.post('/location',function(req, res){
     res.send('error param');
     return;//此处需要return  不然会重复调用res
   }
-  var photoUrl = 'null'
+  var photoUrl = 'null';
   //此处为base64 数据  我们将其还原为文件
   //base64 图片的格式为 data:image/JPG;base64,
   // 目前我们仅仅考虑 apple手机  都是jpg的格式
@@ -161,6 +161,7 @@ serviceRouter.post('/location',function(req, res){
     var insert_query = 'insert into golocation (date,user,project_id,location,photo_url) values("'+TimeStamp+'","'+user+'",'+project_id+',"'+location+'","'+photoUrl+'")';
     console.log(insert_query);
 
+    //TODO 定位信息 校准 是否在范围之内
     connection.query(insert_query,function(err,results,fields){
       //console.dir(arguments);
       if(err){
@@ -178,13 +179,47 @@ serviceRouter.post('/location',function(req, res){
     });
   });
 
-  Promise.all([promise_check,promise_insert]).then(function (posts){
+
+
+  //查询定位区域的并未加入到主逻辑中 TODO
+  function caculate(location1,location2,diff){
+    //前端传的时候 $分割
+    var location_req = location1.split('$');
+    var location_res = location2.split('$');
+    if(Math.pow(location_req[0]-location_res[0],2)+Math.pow(location_req[1]-location_res[1],2)<=diff){
+      return true;
+    }else{
+      return false;
+    }
+  }
+  
+  var promise_location_filedcheck = new Promise(function(resolve,reject){
+    connection.query('select gps_lat gps_lon from project_table where project_id='+project_id,function(err,results,fields){
+      if (err){
+        reject(err);
+      }else{
+        var location_temp = results[0].gps_lat+'$'+results[0].gps_lon;
+        var result = caculate(location_temp,location,100);
+        if(result){
+          resolve();
+        }else{
+          error_flag=2;
+          reject();
+        }
+      }
+    });
+  });
+
+  //这个查询
+  Promise.all([promise_check,promise_insert/*,promise_location_filedcheck*/]).then(function (posts){
     res.send('success');
   }).catch(function(reason){
-    if(error_flag==-1){
+    if(error_flag==1){
       res.send('服务器错误');
-    }else{
+    }else if(error_flag==-1){
       res.send('您不是此项目的负责人，请重新选择或者申请变更');
+    }else{
+      res.send('您定位的地址不准确')
     }
   })
 
