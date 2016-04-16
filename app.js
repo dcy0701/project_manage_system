@@ -8,24 +8,29 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-var sqlConfig = require('./sqlConfig');
+var sqlConfig = require('./mysqlConfig');
 var app = express();
+//引入服务商管理中间件
+var serviceRouter = require('./routes/service');
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-
+// console.dir(sqlConfig)
 var mysql = require('mysql');
 var connection = mysql.createConnection({
     host: sqlConfig.host,
     port: sqlConfig.port,
-    user: sqlConfig.root,
+    user: sqlConfig.user,
     password: sqlConfig.password
 });
-console.log('数据库已经连接');
-
 connection.connect();
+console.dir(connection);
+
+console.log('数据库成功连接');
 var query_databaseName = "use "+sqlConfig.databse;
+
 connection.query(query_databaseName);
+console.log('进入数据库');
 //进入 指定的数据库
 
 // 处理login路径的post请求
@@ -160,6 +165,7 @@ app.post('/add/1', function (req, res) {
 
 });
 
+
 //connection.end();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -174,6 +180,8 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //路由关联
+//挂载服务商管理路由句柄
+app.use('/s', serviceRouter);
 app.use('/', routes);
 app.use('/users', users);
 
@@ -208,7 +216,9 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(3000);
+app.listen(3000,function(){
+  console.log('监听3000端口');
+});
 
 
 module.exports = app;
