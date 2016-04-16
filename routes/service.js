@@ -1,6 +1,6 @@
 /*
     created by dcy on 2016-04-15
-
+    base on async and promise
 */
 
 var async = require('async');
@@ -24,7 +24,7 @@ var connection = mysql.createConnection({
 });
 connection.connect();
 
-connection.query('use '+sqlConfig.database)
+connection.query('use '+sqlConfig.database);
 // 该路由使用的中间件
 serviceRouter.use(function timeLog(req, res, next) {
   console.log('Time: ', Date.now());
@@ -94,7 +94,9 @@ serviceRouter.post('/location',function(req, res){
   //此处为base64 数据  我们将其还原为文件
   //base64 图片的格式为 data:image/JPG;base64,
   // 目前我们仅仅考虑 apple手机  都是jpg的格式
-  console.log(photo);
+
+
+  //console.log(photo);
 
 // /*
 // test
@@ -107,34 +109,96 @@ serviceRouter.post('/location',function(req, res){
   if(photo!==undefined){
     var buffer = photo.replace(/^data:image\/\w+;base64,/, "");
     //将buffer写入文件中
-    console.log(buffer);
+    //console.log(buffer);
     photoUrl = './uploads/'+user+'#'+TimeStamp+'.jpg';
     fs.writeFile(photoUrl, buffer, 'base64', function(err) {
       if(err) console.log(err);
       console.log('saved in '+ photoUrl);
     });
   }
-  //然后将数据写入到 数据库
-  var insert_query = 'insert into golocation (date,user,project_id,location,photo_url) values("'+TimeStamp+'","'+user+'",'+project_id+',"'+location+'","'+photoUrl+'")';
-  console.log(insert_query);
-  connection.query(insert_query,function(err,results,fields){
-    //console.dir(arguments);
-    if(err){
-      console.log(err.code);
-      res.send(err.code+'服务器错误');
+  //校验人员一致性
+  var error_flag = 0;
 
-    }else{
-      //登录成功
-      res.send('success');
-      //
-    }
+
+  var promise_check = new Promise(function(resolve, reject){
+    connection.query('select project_check_id from project_check_info where user_id="'+user+'"',function(err,results,fields){
+      var result_arr = [];
+
+      for(var j of results){
+        result_arr.push(parseInt(j.project_check_id));
+      }
+      console.log(result_arr);
+      // if(Array.prototype.includes!==undefined){
+      //   result_arr.includes(project_id)
+      // }
+      if(result_arr.indexOf(parseInt(project_id))==-1){
+        error_flag=='-1'
+        console.log('error');
+        reject();
+      }else{
+        resolve();
+      }
+    })
   });
+
+  //然后将数据写入到 数据库
+  var promise_insert = new Promise(function(resolve,reject){
+    var insert_query = 'insert into golocation (date,user,project_id,location,photo_url) values("'+TimeStamp+'","'+user+'",'+project_id+',"'+location+'","'+photoUrl+'")';
+    console.log(insert_query);
+
+    connection.query(insert_query,function(err,results,fields){
+      //console.dir(arguments);
+      if(err){
+        console.log(err.code);
+        error_flag=='1'
+        reject(err);
+        //res.send(err.code+'服务器错误');
+
+      }else{
+        resolve();
+        //登录成功
+        //res.send('success');
+        //
+      }
+    });
+  });
+
+  Promise.all([promise_check,promise_insert]).then(function (posts){
+    res.send('success');
+  }).catch(function(reason){
+    if(error_flag==-1){
+      res.send('服务器错误');
+    }else{
+      res.send('您不是此项目的负责人，请重新选择或者申请变更');
+    }
+  })
 
 
   //在此处 我们会将 这个文件转存到一个文件夹下，并且，我们会将图片的相对地址存入数据库中。
 
   //以上是我们从参数里拿到的所有数据
   });
+
+
+serviceRouter.get('/updateChargeman',function(req,res){
+  //TODO
+  var project_id = req.query.project_id;
+  var user_id = req.query.user;
+  if(project_id===undefined||user_id===undefined){
+    res.send('param error');
+    return ;
+    //出口优先
+  }
+  connection.query('update project_check_info set user_id="'+user_id+'" where project_id ='+project_id,function(err,results,fields){
+    //console.log(results.length);
+    if(err){
+      console.log(err);
+      res.send('update error')
+    }else{
+      res.send('update success');
+    }
+
+})
 
 serviceRouter.get('/updateProject',function(req, res){
   //res.send(工程和子工程)
@@ -204,7 +268,6 @@ serviceRouter.get('/updateProject',function(req, res){
     //   });
     // }
     // //
-
 
   });
   //TODO
