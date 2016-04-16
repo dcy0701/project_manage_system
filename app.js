@@ -10,7 +10,7 @@ var users = require('./routes/users');
 
 var sqlConfig = require('./mysqlConfig');
 var app = express();
-//引入服务商管理中间件
+//引入服务商管理 路由
 var serviceRouter = require('./routes/service');
 
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -27,7 +27,7 @@ connection.connect();
 //console.dir(connection);
 
 console.log('数据库成功连接');
-var query_databaseName = "use "+sqlConfig.databse;
+var query_databaseName = "use "+sqlConfig.database;
 
 connection.query(query_databaseName);
 console.log('进入数据库');
@@ -54,6 +54,7 @@ app.post('/login', function (req, res) {
 
 app.get('/', function (req, res) {
     res.send('root');
+    //TODO render 首页
 });
 
 // 匹配 /about 路径的请求
