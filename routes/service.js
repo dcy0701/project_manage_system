@@ -47,6 +47,7 @@ serviceRouter.get('/login', function(req, res) {
   }
   var errorResult = {errorDescription:'null',error:''};
   // TODO 用来给前端和移动端调用
+
   var queryString = 'select password from user where user_name="'+username+'"';
   //此处需要添加 引号
   connection.query(queryString,function(err,results,fields){
@@ -57,14 +58,28 @@ serviceRouter.get('/login', function(req, res) {
 
     }else if(results[0].password==password){
       //登录成功
-      res.send('success');
+      // callback or promise ? callback!
+      // callback hell
+      connection.query('select * from user where user_name="'+username+'"',function(err,results,fields){
+        console.log(results[0]);
+        if(err){
+          res.send('error');
+        }else{
+          var metadate = results[0];
+          // 删除密码属性 返回给用户元数据
+          delete results[0].password;
+          res.send(metadate);
+        }
+      })
+      //res.send('success');
+
       // TODO 返回 用户的元数据
 
     }else{
       //console.log(Object.getOwnPropertyNames(results[0]));
       //console.log([].slice.call(results));
       //账号密码错误
-      res.send('账号密码错误')
+      res.send('账号密码错误');
 
     }
   });
@@ -197,8 +212,8 @@ serviceRouter.get('/updateChargeman',function(req,res){
     }else{
       res.send('update success');
     }
-
-})
+  });
+});
 
 serviceRouter.get('/updateProject',function(req, res){
   //res.send(工程和子工程)
@@ -273,9 +288,9 @@ serviceRouter.get('/updateProject',function(req, res){
   //TODO
 
 });
-serviceRouter.post('/location1',function(req, res){
-  res.send('这是get请求暂时不支持啊');
-
-})
+  serviceRouter.post('/location1',function(req, res){
+    res.send('just for test');
+    }
+  );
 
 module.exports = serviceRouter;
