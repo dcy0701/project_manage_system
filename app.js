@@ -24,7 +24,7 @@ var connection = mysql.createConnection({
     password: sqlConfig.password
 });
 connection.connect();
-console.dir(connection);
+//console.dir(connection);
 
 console.log('数据库成功连接');
 var query_databaseName = "use "+sqlConfig.databse;
