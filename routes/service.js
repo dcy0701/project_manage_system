@@ -2,6 +2,9 @@
     created by dcy on 2016-04-15
 
 */
+
+var async = require('async');
+//async 是一个异步控制的模块 generator原理
 var express = require('express');
 var fs = require('fs');
 var serviceRouter = express.Router();
@@ -122,7 +125,7 @@ serviceRouter.post('/location',function(req, res){
 
     }else{
       //登录成功
-      res.send('签到成功');
+      res.send('success');
       //
     }
   });
@@ -135,7 +138,77 @@ serviceRouter.post('/location',function(req, res){
 
 serviceRouter.get('/updateProject',function(req, res){
   //res.send(工程和子工程)
+  var result_json = {};
+  connection.query('select distinct father_id from project_id',function(err,results,fields){
+    //console.log(results.length);
+    var father_id_array=[];
+
+    // console.log(father_id_array);
+
+    //
+    //   connection.query('select id from project_id where father_id='+4,function(err,resultss,fields){
+    //     console.log(resultss);
+    //     //result_json[i.father_id] = resultss;
+    //     //debugger;
+    //   });
+//此处async写法
+    for(var j of results){
+      father_id_array.push(j.father_id);
+    }
+    console.log(father_id_array);
+    //如果中途出错，则马上把错误传给最终的callback，还未执行的不再执行。
+
+    //TODO 记住一定加上callback 回调函数
+    async.eachSeries(father_id_array, function(item,callback){
+      console.log(item);
+      connection.query('select id from project_id where father_id='+item,function(err,resultss,fields){
+        console.log(resultss);
+        var temp = [];
+        for(var j of resultss){
+            temp.push(j.id);
+        }
+        result_json[item] = temp;
+        //debugger;
+        console.log(result_json);
+        //此时 如果item是最后的
+        // if(father_id_array[-1]===item){
+        //   callback('error')
+        // }else{
+        //
+        // }
+        callback(null, item);
+      });
+    },function(err){
+      //最后一定会执行，在此处。
+      res.json(result_json);
+      console.log(err);
+    })
+
+
+    // for(var i of results){
+    //   //console.log(i.father_id);
+    //   //console.log('querystring:'+'select id from project_id where father_id='+i.father_id);
+    //   connection.query('select id from project_id where father_id='+i.father_id,function(err,resultss,fields){
+    //     console.log(resultss);
+    //     var temp;
+    //     if(resultss.length>1){
+    //       temp = [];
+    //       for(var j of resultss){
+    //         temp.push(j.id);
+    //       }
+    //     }else{
+    //       temp = resultss[0].id;
+    //     }
+    //     result_json[i.father_id] = temp;
+    //     //debugger;
+    //   });
+    // }
+    // //
+
+
+  });
   //TODO
+
 });
 serviceRouter.post('/location1',function(req, res){
   res.send('这是get请求暂时不支持啊');
