@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
+//GIT测试
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -12,6 +12,8 @@ var sqlConfig = require('./mysqlConfig');
 var app = express();
 //引入服务商管理 路由
 var serviceRouter = require('./routes/service');
+//引入进度管理路由
+var processRouter = require('./routes/process');
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
@@ -33,6 +35,8 @@ connection.query(query_databaseName);
 console.log('进入数据库');
 //进入 指定的数据库
 
+
+/*已经在service.js中实现
 // 处理login路径的post请求
 app.post('/login', function (req, res) {
     console.log("%s",req.body.user_name);
@@ -51,7 +55,7 @@ app.post('/login', function (req, res) {
 
     );
 });
-
+*/
 app.get('/', function (req, res) {
     res.send('root');
     //TODO render 首页
@@ -66,104 +70,6 @@ app.get('/about', function (req, res) {
 // 匹配 /random.text 路径的请求
 app.get('/random.te?xt', function (req, res) {
     res.send('random.text');
-});
-
-// 匹配 /search 路径的请求
-//"search/1"以工程id查找工程信息
-
-app.get('/search/1', function (req, res) {
-    var url_info = require('url').parse(req.url, true);
-    var data = require('querystring').stringify(url_info.query);
-    connection.query('SELECT * FROM project_table where project_' + data,
-        function selectCb(err, results, fields) {
-            if (err) {
-                throw err;
-            }
-
-            if (results) {
-                for (var i = 0; i < results.length; i++) {
-                    console.log("%d", results[i].parent_id);
-                    //res.send(results[i]);
-                    res.json(results[i]);
-                }
-            }
-
-        }
-    );
-
-});
-
-// 匹配 /search 路径的请求
-//"search/2"以工程id查找工程进度信息
-app.get('/search/2', function (req, res) {
-    connection.query("use 项目管理系统");
-    var url_info = require('url').parse(req.url, true);
-    var data = require('querystring').stringify(url_info.query);
-    connection.query('SELECT * FROM project_tocheck where project_' + data,
-        function selectCb(err, results, fields) {
-            if (err) {
-                throw err;
-            }
-
-            if (results) {
-                for (var i = 0; i < results.length; i++) {
-                    //res.send(results[i]);
-                    res.json(results[i]);
-                }
-            }
-        }
-    );
-
-});
-
-// 匹配 /search 路径的请求
-//"search/3"以进度项id查找进度信息
-app.get('/search/3', function (req, res) {
-    connection.query("use 项目管理系统");
-    var url_info = require('url').parse(req.url, true);
-    var data = require('querystring').stringify(url_info.query);
-    connection.query('SELECT * FROM project_check_info where project_check_' + data,
-        function selectCb(err, results, fields) {
-            if (err) {
-                throw err;
-            }
-
-            if (results) {
-                for (var i = 0; i < results.length; i++) {
-                    //res.send(results[i]);
-                    res.json(results[i]);
-                }
-            }
-        }
-    );
-
-});
-
-// 匹配 /add 路径的请求
-//"add/1"添加项目进度检查项
-app.post('/add/1', function (req, res) {
-    console.log("%s", req.body.target);
-    connection.query("use 项目管理系统");
-    connection.query('insert into project_tocheck values ( ' + req.body.id + ','
-                                                                                    + req.body.project_id + ','
-                                                                                    + req.body.time + ','
-                                                                                    + req.body.type + ','
-                                                                                    + req.body.begin_time + ','
-                                                                                    + req.body.end_time + ','
-                                                                                    + req.body.target + ','
-                                                                                    + req.body.target_now + ','
-                                                                                    + req.body.state+')' ,
-        function selectCb(err, results, fields) {
-            if (err) {
-                res.json(0);
-            }
-
-            if (results) {
-                res.json(1);
-            }
-        }
-    );
-
 });
 
 
@@ -183,6 +89,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 //路由关联
 //挂载服务商管理路由句柄
 app.use('/s', serviceRouter);
+//挂载进度管理路由句柄
+app.use('/p',processRouter);
 app.use('/', routes);
 app.use('/users', users);
 
@@ -217,8 +125,8 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(3000,function(){
-  console.log('监听3000端口');
+app.listen(3030,function(){
+  console.log('监听3030端口');
 });
 
 
