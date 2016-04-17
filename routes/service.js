@@ -56,7 +56,7 @@ serviceRouter.get('/login', function(req, res) {
       console.log(err.code);
       res.send(err.code+'服务器错误');
 
-    }else if(results[0].password==password){
+    }else if(results[0]!==undefined&&results[0].password!==undefined&&results[0].password===password){
       //登录成功
       // callback or promise ? callback!
       // callback hell
@@ -192,7 +192,7 @@ serviceRouter.post('/location',function(req, res){
       return false;
     }
   }
-  
+
   var promise_location_filedcheck = new Promise(function(resolve,reject){
     connection.query('select gps_lat gps_lon from project_table where project_id='+project_id,function(err,results,fields){
       if (err){
@@ -210,7 +210,7 @@ serviceRouter.post('/location',function(req, res){
     });
   });
 
-  //这个查询
+  //这个查询 暂时未添加
   Promise.all([promise_check,promise_insert/*,promise_location_filedcheck*/]).then(function (posts){
     res.send('success');
   }).catch(function(reason){
