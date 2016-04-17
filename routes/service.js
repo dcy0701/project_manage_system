@@ -243,7 +243,7 @@ serviceRouter.get('/updateChargeman',function(req,res){
     //console.log(results.length);
     if(err){
       console.log(err);
-      res.send('update error')
+      res.send('update error');
     }else{
       res.send('update success');
     }
