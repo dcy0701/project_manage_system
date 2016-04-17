@@ -1,16 +1,16 @@
-/*
+ï»¿/*
     created by bwd on 2016-04-17
     base on async and promise
 */
 
 var async = require('async');
-//async ÊÇÒ»¸öÒì²½¿ØÖÆµÄÄ£¿é generatorÔ­Àí
+//async æ˜¯ä¸€ä¸ªå¼‚æ­¥æ§åˆ¶çš„æ¨¡å— generatoråŸç†
 var express = require('express');
 var fs = require('fs');
 var processRouter = express.Router();
 
-//Êı¾İ¿âÒÔ´«µİµÄ·½Ê½  ²»ÔÙÖØĞÂÁ¬½Ó TODO
-//Êı¾İ¿âÔİÊ±  ÔÙ´ÎÁ¬½Ó¡£
+//æ•°æ®åº“ä»¥ä¼ é€’çš„æ–¹å¼  ä¸å†é‡æ–°è¿æ¥ TODO
+//æ•°æ®åº“æš‚æ—¶  å†æ¬¡è¿æ¥ã€‚
 var sqlConfig = require('./../mysqlConfig');
 
 var mysql = require('mysql');
@@ -25,20 +25,20 @@ var connection = mysql.createConnection({
 connection.connect();
 
 connection.query('use ' + sqlConfig.database);
-// ¸ÃÂ·ÓÉÊ¹ÓÃµÄÖĞ¼ä¼ş
+// è¯¥è·¯ç”±ä½¿ç”¨çš„ä¸­é—´ä»¶
 processRouter.use(function timeLog(req, res, next) {
     console.log('Time: ', Date.now());
     next();
 });
-// ¶¨ÒåÍøÕ¾Ö÷Ò³µÄÂ·ÓÉ
+// å®šä¹‰ç½‘ç«™ä¸»é¡µçš„è·¯ç”±
 
 processRouter.get('/', function (req, res) {
-    res.send('½ø¶È¹ÜÀíÒ³Ãæ');
+    res.send('è¿›åº¦ç®¡ç†é¡µé¢');
 });
 
 
-// Æ¥Åä /search Â·¾¶µÄÇëÇó
-//"search/1"ÒÔ¹¤³Ìid²éÕÒ¹¤³ÌĞÅÏ¢
+// åŒ¹é… /search è·¯å¾„çš„è¯·æ±‚
+//"search/1"ä»¥å·¥ç¨‹idæŸ¥æ‰¾å·¥ç¨‹ä¿¡æ¯
 
 processRouter.get('/search/1', function (req, res) {
     var url_info = require('url').parse(req.url, true);
@@ -46,7 +46,7 @@ processRouter.get('/search/1', function (req, res) {
     connection.query('SELECT * FROM project_table where project_' + data,
         function selectCb(err, results, fields) {
             if (err) {
-                throw err;
+                console.log(err.code);
             }
 
             if (results) {
@@ -62,16 +62,16 @@ processRouter.get('/search/1', function (req, res) {
 
 });
 
-// Æ¥Åä /search Â·¾¶µÄÇëÇó
-//"search/2"ÒÔ¹¤³Ìid²éÕÒ¹¤³Ì½ø¶ÈĞÅÏ¢
+// åŒ¹é… /search è·¯å¾„çš„è¯·æ±‚
+//"search/2"ä»¥å·¥ç¨‹idæŸ¥æ‰¾å·¥ç¨‹è¿›åº¦ä¿¡æ¯
 processRouter.get('/search/2', function (req, res) {
-    connection.query("use ÏîÄ¿¹ÜÀíÏµÍ³");
+    connection.query("use é¡¹ç›®ç®¡ç†ç³»ç»Ÿ");
     var url_info = require('url').parse(req.url, true);
     var data = require('querystring').stringify(url_info.query);
     connection.query('SELECT * FROM project_tocheck where project_' + data,
         function selectCb(err, results, fields) {
             if (err) {
-                throw err;
+                console.code(err.code);
             }
 
             if (results) {
@@ -85,16 +85,16 @@ processRouter.get('/search/2', function (req, res) {
 
 });
 
-// Æ¥Åä /search Â·¾¶µÄÇëÇó
-//"search/3"ÒÔ½ø¶ÈÏîid²éÕÒ½ø¶ÈĞÅÏ¢
+// åŒ¹é… /search è·¯å¾„çš„è¯·æ±‚
+//"search/3"ä»¥è¿›åº¦é¡¹idæŸ¥æ‰¾è¿›åº¦ä¿¡æ¯
 processRouter.get('/search/3', function (req, res) {
-    connection.query("use ÏîÄ¿¹ÜÀíÏµÍ³");
+    connection.query("use é¡¹ç›®ç®¡ç†ç³»ç»Ÿ");
     var url_info = require('url').parse(req.url, true);
     var data = require('querystring').stringify(url_info.query);
     connection.query('SELECT * FROM project_check_info where project_check_' + data,
         function selectCb(err, results, fields) {
             if (err) {
-                throw err;
+                console.code(err.code);
             }
 
             if (results) {
@@ -108,11 +108,11 @@ processRouter.get('/search/3', function (req, res) {
 
 });
 
-// Æ¥Åä /add Â·¾¶µÄÇëÇó
-//"add/1"Ìí¼ÓÏîÄ¿½ø¶È¼ì²éÏî
+// åŒ¹é… /add è·¯å¾„çš„è¯·æ±‚
+//"add/1"æ·»åŠ é¡¹ç›®è¿›åº¦æ£€æŸ¥é¡¹
 processRouter.post('/add/1', function (req, res) {
     console.log("%s", req.body.target);
-    connection.query("use ÏîÄ¿¹ÜÀíÏµÍ³");
+    connection.query("use é¡¹ç›®ç®¡ç†ç³»ç»Ÿ");
     connection.query('insert into project_tocheck values ( ' + req.body.id + ','
                                                                                     + req.body.project_id + ','
                                                                                     + req.body.time + ','
@@ -124,7 +124,7 @@ processRouter.post('/add/1', function (req, res) {
                                                                                     + req.body.state + ')',
         function selectCb(err, results, fields) {
             if (err) {
-                res.json(0);
+                console.log(err);
             }
 
             if (results) {
