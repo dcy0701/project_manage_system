@@ -2,7 +2,9 @@
     created by bwd on 2016-04-17
     base on async and promise
 */
-
+var multer = require('multer')
+var upload = multer({ dest: 'uploads/123/' })
+var cpUpload = upload.any();
 var async = require('async');
 //async 是一个异步控制的模块 generator原理
 var express = require('express');
@@ -26,6 +28,7 @@ connection.connect();
 
 connection.query('use ' + sqlConfig.database);
 // 该路由使用的中间件
+processRouter.use(cpUpload);
 processRouter.use(function timeLog(req, res, next) {
     console.log('Time: ', Date.now());
     next();
@@ -124,7 +127,34 @@ processRouter.post('/add/1', function (req, res) {
                                                                                     + req.body.state + ')',
         function selectCb(err, results, fields) {
             if (err) {
+                console.log(err.code);
+            }
+
+            if (results) {
+                res.json(1);
+            }
+        }
+    );
+
+});
+
+// 匹配 /upload 路径的请求
+//"upload/” 项目进度上传
+
+processRouter.post('/upload', function (req, res) {
+    connection.query("use 项目管理系统");
+    console.log(req.body.id);
+    var pic = req.files[0];
+    console.log(typeof(pic));
+    connection.query('insert into project_check_info values ( ' + req.body.id + ','
+                                                                                    + req.body.check_id + ','
+                                                                                    + req.body.user_id + ','
+                                                                                    + req.body.detail + ','
+                                                                                    + req.body.datetime + ')',
+        function selectCb(err, results, fields) {
+            if (err) {
                 console.log(err);
+                res.send(err);
             }
 
             if (results) {
