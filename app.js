@@ -129,8 +129,8 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(3030,function(){
-  console.log('监听3030端口');
+app.listen(3000,function(){
+  console.log('监听3000端口');
 });
 
 
