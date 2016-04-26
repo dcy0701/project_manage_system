@@ -1,4 +1,7 @@
 ﻿var express = require('express');
+//var multer = require('multer')
+//var upload = multer({ dest: 'uploads/' })
+//var cpUpload = upload.any();
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -15,8 +18,9 @@ var serviceRouter = require('./routes/service');
 //引入进度管理路由
 var processRouter = require('./routes/process');
 
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ limit: '10mb' , extended: true }))
+app.use(bodyParser.json({limit: '10mb'}))
+//app.use(cpUpload);
 // console.dir(sqlConfig)
 var mysql = require('mysql');
 var connection = mysql.createConnection({
@@ -125,8 +129,8 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.listen(3000,function(){
-  console.log('监听3000端口');
+app.listen(3030,function(){
+  console.log('监听3030端口');
 });
 
 

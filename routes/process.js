@@ -1,137 +1,313 @@
-/*
+ï»¿/*
     created by bwd on 2016-04-17
     base on async and promise
 */
-
+var multer = require('multer')
+var storage = multer.diskStorage({
+	//è®¾ç½®ä¸Šä¼ åæ–‡ä»¶è·¯å¾„ï¼Œuploadsæ–‡ä»¶å¤¹ä¼šè‡ªåŠ¨åˆ›å»ºã€‚
+	destination: function (req, file, cb) {
+		cb(null, './uploads/progress/default/')
+	}, 
+	//ç»™ä¸Šä¼ æ–‡ä»¶é‡å‘½åï¼Œè·å–æ·»åŠ åç¼€å
+	filename: function (req, file, cb) {
+		var fileFormat = (file.originalname).split(".");
+		cb(null, file.fieldname + '-' + Date.now() + "." + fileFormat[fileFormat.length - 1]);
+	}
+});
+var upload = multer({
+	storage: storage
+});
+var cpUpload = upload.any();
 var async = require('async');
-//async ÊÇÒ»¸öÒì²½¿ØÖÆµÄÄ£¿é generatorÔ­Àí
+//async æ˜¯ä¸€ä¸ªå¼‚æ­¥æ§åˆ¶çš„æ¨¡å— generatoråŸç†
 var express = require('express');
 var fs = require('fs');
 var processRouter = express.Router();
 
-//Êı¾İ¿âÒÔ´«µİµÄ·½Ê½  ²»ÔÙÖØĞÂÁ¬½Ó TODO
-//Êı¾İ¿âÔİÊ±  ÔÙ´ÎÁ¬½Ó¡£
+//æ•°æ®åº“ä»¥ä¼ é€’çš„æ–¹å¼  ä¸å†é‡æ–°è¿æ¥ TODO
+//æ•°æ®åº“æš‚æ—¶  å†æ¬¡è¿æ¥ã€‚
 var sqlConfig = require('./../mysqlConfig');
 
 var mysql = require('mysql');
 console.log(sqlConfig.database);
 var connection = mysql.createConnection({
-    host: sqlConfig.host,
-    port: sqlConfig.port,
-    user: sqlConfig.user,
-    password: sqlConfig.password,
-    databse: sqlConfig.database
+	host: sqlConfig.host,
+	port: sqlConfig.port,
+	user: sqlConfig.user,
+	password: sqlConfig.password,
+	databse: sqlConfig.database
 });
 connection.connect();
 
 connection.query('use ' + sqlConfig.database);
-// ¸ÃÂ·ÓÉÊ¹ÓÃµÄÖĞ¼ä¼ş
+// è¯¥è·¯ç”±ä½¿ç”¨çš„ä¸­é—´ä»¶
+processRouter.use(cpUpload);
 processRouter.use(function timeLog(req, res, next) {
-    console.log('Time: ', Date.now());
-    next();
+	console.log('Time: ', Date.now());
+	next();
 });
-// ¶¨ÒåÍøÕ¾Ö÷Ò³µÄÂ·ÓÉ
+// å®šä¹‰ç½‘ç«™ä¸»é¡µçš„è·¯ç”±
 
 processRouter.get('/', function (req, res) {
-    res.send('½ø¶È¹ÜÀíÒ³Ãæ');
+	res.render('process', { title: 'è¿›åº¦ç®¡ç†' });
+	res.send('è¿›åº¦ç®¡ç†é¡µé¢');
 });
 
 
-// Æ¥Åä /search Â·¾¶µÄÇëÇó
-//"search/1"ÒÔ¹¤³Ìid²éÕÒ¹¤³ÌĞÅÏ¢
 
-processRouter.get('/search/1', function (req, res) {
-    var url_info = require('url').parse(req.url, true);
-    var data = require('querystring').stringify(url_info.query);
-    connection.query('SELECT * FROM project_table where project_' + data,
-        function selectCb(err, results, fields) {
-            if (err) {
-                throw err;
-            }
-
-            if (results) {
-                for (var i = 0; i < results.length; i++) {
-                    console.log("%d", results[i].parent_id);
-                    //res.send(results[i]);
-                    res.json(results[i]);
-                }
-            }
-
-        }
-    );
-
-});
-
-// Æ¥Åä /search Â·¾¶µÄÇëÇó
-//"search/2"ÒÔ¹¤³Ìid²éÕÒ¹¤³Ì½ø¶ÈĞÅÏ¢
+// åŒ¹é… /search è·¯å¾„çš„è¯·æ±‚
+//"search/2"ä»¥å·¥ç¨‹idæŸ¥æ‰¾å·¥ç¨‹æ£€æŸ¥é¡¹
 processRouter.get('/search/2', function (req, res) {
-    connection.query("use ÏîÄ¿¹ÜÀíÏµÍ³");
-    var url_info = require('url').parse(req.url, true);
-    var data = require('querystring').stringify(url_info.query);
-    connection.query('SELECT * FROM project_tocheck where project_' + data,
+	connection.query("use é¡¹ç›®ç®¡ç†ç³»ç»Ÿ");
+	var url_info = require('url').parse(req.url, true);
+	var data = require('querystring').stringify(url_info.query);
+	connection.query('SELECT * FROM project_tocheck where project_' + data,
         function selectCb(err, results, fields) {
-            if (err) {
-                throw err;
-            }
-
-            if (results) {
-                for (var i = 0; i < results.length; i++) {
-                    //res.send(results[i]);
-                    res.json(results[i]);
-                }
-            }
-        }
-    );
+		if (err) {
+			console.code(err.code);
+		}
+		
+		if (results) {
+			for (var i = 0; i < results.length; i++) {
+				//res.send(results[i]);
+				res.json(results[i]);
+			}
+		}
+	}
+	);
 
 });
 
-// Æ¥Åä /search Â·¾¶µÄÇëÇó
-//"search/3"ÒÔ½ø¶ÈÏîid²éÕÒ½ø¶ÈĞÅÏ¢
+// åŒ¹é… /search è·¯å¾„çš„è¯·æ±‚
+//"search/3"ä»¥è¿›åº¦é¡¹idæŸ¥æ‰¾è¿›åº¦ä¿¡æ¯
 processRouter.get('/search/3', function (req, res) {
-    connection.query("use ÏîÄ¿¹ÜÀíÏµÍ³");
-    var url_info = require('url').parse(req.url, true);
-    var data = require('querystring').stringify(url_info.query);
-    connection.query('SELECT * FROM project_check_info where project_check_' + data,
+	connection.query("use é¡¹ç›®ç®¡ç†ç³»ç»Ÿ");
+	var url_info = require('url').parse(req.url, true);
+	var data = require('querystring').stringify(url_info.query);
+	connection.query('SELECT * FROM project_check_info where project_check_' + data,
         function selectCb(err, results, fields) {
-            if (err) {
-                throw err;
-            }
-
-            if (results) {
-                for (var i = 0; i < results.length; i++) {
-                    //res.send(results[i]);
-                    res.json(results[i]);
-                }
-            }
-        }
-    );
+		if (err) {
+			console.code(err.code);
+		}
+		
+		if (results) {
+			for (var i = 0; i < results.length; i++) {
+				//res.send(results[i]);
+				res.json(results[i]);
+			}
+		}
+	}
+	);
 
 });
 
-// Æ¥Åä /add Â·¾¶µÄÇëÇó
-//"add/1"Ìí¼ÓÏîÄ¿½ø¶È¼ì²éÏî
+// åŒ¹é… /add è·¯å¾„çš„è¯·æ±‚
+//"add/1"æ·»åŠ é¡¹ç›®è¿›åº¦æ£€æŸ¥é¡¹
 processRouter.post('/add/1', function (req, res) {
-    console.log("%s", req.body.target);
-    connection.query("use ÏîÄ¿¹ÜÀíÏµÍ³");
-    connection.query('insert into project_tocheck values ( ' + req.body.id + ','
-                                                                                    + req.body.project_id + ','
-                                                                                    + req.body.time + ','
-                                                                                    + req.body.type + ','
-                                                                                    + req.body.begin_time + ','
-                                                                                    + req.body.end_time + ','
-                                                                                    + req.body.target + ','
-                                                                                    + req.body.target_now + ','
+	connection.query("use é¡¹ç›®ç®¡ç†ç³»ç»Ÿ");
+	connection.query('insert into project_tocheck values ( ' + req.body.id + ',' 
+                                                                                    + req.body.project_id + ',' 
+                                                                                    + req.body.time + ',' 
+                                                                                    + req.body.type + ',' 
+                                                                                    + req.body.begin_time + ',' 
+                                                                                    + req.body.end_time + ',' 
+                                                                                    + req.body.target + ',' 
+                                                                                    + req.body.target_now + ',' 
                                                                                     + req.body.state + ')',
         function selectCb(err, results, fields) {
-            if (err) {
-                res.json(0);
-            }
-
-            if (results) {
-                res.json(1);
-            }
-        }
-    );
+		if (err) {
+			console.log(err.code);
+		} 
+		
+		if (results) {
+			res.json(1);
+		}
+	}
+	);
 
 });
-module.exports =processRouter;
+
+//"delete/1"åˆ é™¤é¡¹ç›®æ£€æŸ¥é¡¹
+processRouter.get('/delete/1', function (req, res) {
+	var url_info = require('url').parse(req.url, true);
+	
+	var k = Object.keys(url_info.query);
+	var temp = k[0] + '=' + url_info.query[k[0]];
+	for (var i = 1; i < k.length; i++) {
+		temp += ' and ' + k[i] + '=' + url_info.query[k[i]];
+	}
+	connection.query('delete FROM project_tocheck where ' + temp,
+        function selectCb(err, results, fields) {
+		if (err) {
+			console.log(err.code);
+		}
+		
+		if (results) {
+			res.send('deldete success');
+		}
+		
+	}
+	);
+
+});
+
+//"delete/2"åˆ é™¤è¿›åº¦ä¿¡æ¯
+processRouter.get('/delete/2', function (req, res) {
+	var url_info = require('url').parse(req.url, true);
+	
+	var k = Object.keys(url_info.query);
+	var temp = k[0] + '=' + url_info.query[k[0]];
+	for (var i = 1; i < k.length; i++) {
+		temp += ' and ' + k[i] + '=' + url_info.query[k[i]];
+	}
+	connection.query('delete FROM project_check_info where ' + temp,
+        function selectCb(err, results, fields) {
+		if (err) {
+			console.log(err.code);
+		}
+		
+		if (results) {
+			res.send('deldete success');
+		}
+		
+	}
+	);
+
+});
+
+//â€œupdate/1â€æ›´æ–°é¡¹ç›®æ£€æŸ¥é¡¹
+processRouter.post('/update/1', function (req, res) {
+	
+	connection.query('delete FROM project_tocheck where project_id= ' + req.body.project_id,
+        function selectCb(err, results, fields) {
+		if (err) {
+			console.log(err.code);
+		}
+		
+		if (results) {
+			console.log("åˆ é™¤æˆåŠŸ");
+		}
+		
+	}
+
+	);
+	connection.query('insert into project_tocheck values ( ' + req.body.id + ',' 
+                                                                                    + req.body.project_id + ',' 
+                                                                                    + req.body.time + ',' 
+                                                                                    + req.body.type + ',' 
+                                                                                    + req.body.begin_time + ',' 
+                                                                                    + req.body.end_time + ',' 
+                                                                                    + req.body.target + ',' 
+                                                                                    + req.body.target_now + ',' 
+                                                                                    + req.body.state + ')',
+        function selectCb(err, results, fields) {
+		if (err) {
+			console.log(err);
+		}
+		
+		if (results) {
+			console.log("æ›´æ–°æˆåŠŸ");
+			res.send('update success');
+		}
+	}
+	);
+});
+
+//â€œupdate/2â€æ›´æ–°è¿›åº¦ä¿¡æ¯
+processRouter.post('/update/2', function (req, res) {
+	
+	connection.query('delete FROM project_check_info where id= ' + req.body.id,
+        function selectCb(err, results, fields) {
+		if (err) {
+			console.log(err);
+		}
+		
+		if (results) {
+			console.log("åˆ é™¤æˆåŠŸ");
+		}
+		
+	}
+
+	);
+	connection.query('insert into project_check_info values ( ' + req.body.id + ',' 
+                                                                                    + req.body.check_id + ',' 
+                                                                                    + req.body.user_id + ',' 
+                                                                                    + req.body.detail + ',' 
+                                                                                    + req.body.datetime + ')',
+        function selectCb(err, results, fields) {
+		if (err) {
+			console.log(err);
+			res.send(err);
+		}
+		
+		if (results) {
+			var i;
+			var new_path = "./uploads/progress/" + req.body.check_id;
+			fs.mkdir(new_path, function (err) {
+				if (err)
+					console.log(err);
+				else
+					console.log("ç›®å½•åˆ›å»ºæˆåŠŸ");
+			});
+			for (i in req.files) {
+				fs.rename(req.files[i].path, new_path + '/' + req.files[i].filename, function (err) {
+					if (err) {
+						console.log(err);
+					}
+					else
+						console.log("æ–‡ä»¶ç§»åŠ¨æˆåŠŸ");
+
+				});
+			}
+			console.log("æ›´æ–°æˆåŠŸ");
+			res.send('update success');
+		}
+	}
+	);
+});
+
+// åŒ¹é… /upload è·¯å¾„çš„è¯·æ±‚
+//"upload/â€ é¡¹ç›®è¿›åº¦ä¸Šä¼ 
+
+processRouter.post('/upload', function (req, res) {
+	connection.query("use é¡¹ç›®ç®¡ç†ç³»ç»Ÿ");
+	console.log(req.body.id);
+	//var pic = req.files[0];
+	//console.log(typeof (pic));
+	connection.query('insert into project_check_info values ( ' + req.body.id + ',' 
+                                                                                    + req.body.check_id + ',' 
+                                                                                    + req.body.user_id + ',' 
+                                                                                    + req.body.detail + ',' 
+                                                                                    + req.body.datetime + ')',
+        function selectCb(err, results, fields) {
+		if (err) {
+			console.log(err);
+			res.send(err);
+		}
+		
+		if (results) {
+			var i;
+			var new_path = "./uploads/progress/" + req.body.check_id ;
+			fs.mkdir(new_path, function (err) {
+				if (err)
+					console.log(err);
+				else
+					console.log("ç›®å½•åˆ›å»ºæˆåŠŸ");
+			});
+			for (i in req.files) {
+				fs.rename(req.files[i].path, new_path +'/'+ req.files[i].filename, function (err) {
+					if (err) {
+						console.log(err);
+					}
+					else
+						console.log("æ–‡ä»¶ç§»åŠ¨æˆåŠŸ");
+
+				});
+			}
+			res.json(1);
+		}
+	}
+	);
+
+});
+module.exports = processRouter;
