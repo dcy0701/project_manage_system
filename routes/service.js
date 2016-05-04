@@ -9,6 +9,9 @@ var express = require('express');
 var fs = require('fs');
 var serviceRouter = express.Router();
 
+var multipart = require('connect-multiparty');
+var multipartMiddleware = multipart();
+
 //数据库以传递的方式  不再重新连接 TODO
 //数据库暂时  再次连接。
 var sqlConfig = require('./../mysqlConfig');
@@ -30,6 +33,7 @@ serviceRouter.use(function timeLog(req, res, next) {
   console.log('Time: ', Date.now());
   next();
 });
+
 // 定义网站主页的路由
 
 serviceRouter.get('/', function(req, res) {
@@ -90,17 +94,17 @@ serviceRouter.get('/login', function(req, res) {
 // 坐标转换api
 // 工程和子工程更新api
 
-serviceRouter.post('/location',function(req, res){
+serviceRouter.post('/location',multipartMiddleware,function(req, res){
   //TODO
 
   console.log(req.body);//body里面是post的信息  已经被中间件编译过的
-
+  console.log(req.files.photo);
   var user = req.body.user;
   var location = req.body.location;
   var TimeStamp = new Date().getTime();
   //还有这个参数是子工程的id  这个将在更新的时候传递给前端  这个值是可以拿到的
   var project_id = req.body.project_id;
-  var photo = req.body.photo;
+  //var photo = req.body.photo;
   if(user===undefined||location===undefined||project_id===undefined){
     res.send('error param');
     return;//此处需要return  不然会重复调用res
@@ -120,9 +124,11 @@ serviceRouter.post('/location',function(req, res){
 //   if (err) throw err;
 //   console.log('It\'s saved!');
 // });
-
+    var photo = req.files.photo.path;
   if(photo!==undefined){
-    var buffer = photo.replace(/^data:image\/\w+;base64,/, "");
+    var imageBuf = fs.readFileSync(photo);
+    var photo_base64 = imageBuf.toString("base64");
+    var buffer = photo_base64.replace(/^data:image\/\w+;base64,/, "");
     //将buffer写入文件中
     //console.log(buffer);
     photoUrl = './uploads/'+user+'#'+TimeStamp+'.jpg';
@@ -130,6 +136,7 @@ serviceRouter.post('/location',function(req, res){
       if(err) console.log(err);
       console.log('saved in '+ photoUrl);
     });
+
   }
   //校验人员一致性
   var error_flag = 0;
@@ -143,13 +150,15 @@ serviceRouter.post('/location',function(req, res){
         result_arr.push(parseInt(j.project_check_id));
       }
       console.log(result_arr);
+      console.log(result_arr.indexOf(parseInt(project_id)));
       // if(Array.prototype.includes!==undefined){
       //   result_arr.includes(project_id)
       // }
+
       if(result_arr.indexOf(parseInt(project_id))==-1){
-        error_flag=='-1'
-        console.log('error');
-        reject();
+        error_flag='-1'
+        console.log('负责人出错');
+        reject('-1');
       }else{
         resolve();
       }
@@ -165,8 +174,8 @@ serviceRouter.post('/location',function(req, res){
     connection.query(insert_query,function(err,results,fields){
       //console.dir(arguments);
       if(err){
-        console.log(err.code);
-        error_flag=='1'
+        console.log('插入出错');
+        error_flag='1'
         reject(err);
         //res.send(err.code+'服务器错误');
 
@@ -179,47 +188,55 @@ serviceRouter.post('/location',function(req, res){
     });
   });
 
-
-
   //查询定位区域的并未加入到主逻辑中 TODO
-  function caculate(location1,location2,diff){
-    //前端传的时候 $分割
-    var location_req = location1.split('$');
-    var location_res = location2.split('$');
-    if(Math.pow(location_req[0]-location_res[0],2)+Math.pow(location_req[1]-location_res[1],2)<=diff){
-      return true;
-    }else{
-      return false;
-    }
-  }
-
-  var promise_location_filedcheck = new Promise(function(resolve,reject){
-    connection.query('select gps_lat gps_lon from project_table where project_id='+project_id,function(err,results,fields){
-      if (err){
-        reject(err);
-      }else{
-        var location_temp = results[0].gps_lat+'$'+results[0].gps_lon;
-        var result = caculate(location_temp,location,100);
-        if(result){
-          resolve();
-        }else{
-          error_flag=2;
-          reject();
-        }
-      }
-    });
-  });
+  // function caculate(location1,location2,diff){
+  //   //前端传的时候 $分割
+  //   var location_req = location1.split('$');
+  //   var location_res = location2.split('$');
+  //   if(Math.pow(location_req[0]-location_res[0],2)+Math.pow(location_req[1]-location_res[1],2)<=diff){
+  //     return true;
+  //   }else{
+  //     return false;
+  //   }
+  // }
+  //
+  // var promise_location_filedcheck = new Promise(function(resolve,reject){
+  //   connection.query('select gps_lat gps_lon from project_table where project_id='+project_id,function(err,results,fields){
+  //     if (err){
+  //       reject(err);
+  //     }else{
+  //         console.log(results);
+  //       var location_temp = results[0].gps_lat+'$'+results[0].gps_lon;
+  //       var result = caculate(location_temp,location,100);
+  //       if(result){
+  //         resolve();
+  //       }else{
+  //         error_flag=2;
+  //         reject();
+  //       }
+  //     }
+  //   });
+  // });
 
   //这个查询 暂时未添加
+  var errorDescription={};
   Promise.all([promise_check,promise_insert/*,promise_location_filedcheck*/]).then(function (posts){
-    res.send('success');
+    errorDescription.status='s';
+    res.json(errorDescription);
   }).catch(function(reason){
+      console.log(error_flag);
     if(error_flag==1){
-      res.send('服务器错误');
+        errorDescription.status='1';
+        errorDescription.text='服务器错误';
+        res.json(errorDescription);
     }else if(error_flag==-1){
-      res.send('您不是此项目的负责人，请重新选择或者申请变更');
+        errorDescription.status='-1';
+        errorDescription.text='您不是此项目的负责人，请重新选择或者申请变更';
+        res.json(errorDescription);
     }else{
-      res.send('您定位的地址不准确')
+        errorDescription.status='2';
+        errorDescription.text='您定位的地址不准确';
+        res.json(errorDescription);
     }
   })
 
@@ -239,7 +256,7 @@ serviceRouter.get('/updateChargeman',function(req,res){
     return ;
     //出口优先
   }
-  connection.query('update project_check_info set user_id="'+user_id+'" where project_id ='+project_id,function(err,results,fields){
+  connection.query('update project_check_info set user_id="'+user_id+'" where project_check_id ='+project_id,function(err,results,fields){
     //console.log(results.length);
     if(err){
       console.log(err);
@@ -249,6 +266,27 @@ serviceRouter.get('/updateChargeman',function(req,res){
     }
   });
 });
+
+serviceRouter.get('/updateChargeman1',function(req,res){
+  //TODO
+  var p_id = req.query.project_id;
+  var u_id = req.query.user;
+  if(p_id===undefined||u_id===undefined){
+    res.send('param error');
+    return ;
+    //出口优先
+  }
+  connection.query('insert into project_apply (project_check_id,user_id) values ("'+p_id+'","'+u_id+'") ',function(err,results,fields){
+    //console.log(results.length);
+    if(err){
+      console.log(err);
+      res.send('apply error');
+    }else{
+      res.send('apply success');
+    }
+  });
+});
+
 
 serviceRouter.get('/updateProject',function(req, res){
   //res.send(工程和子工程)
