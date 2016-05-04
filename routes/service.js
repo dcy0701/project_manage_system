@@ -60,7 +60,7 @@ serviceRouter.get('/login', function(req, res) {
       console.log(err.code);
       res.send(err.code+'服务器错误');
 
-    }else if(results[0]!==undefined&&results[0].password!==undefined&&results[0].password===password){
+    }else if(results[0].password==password){
       //登录成功
       // callback or promise ? callback!
       // callback hell
@@ -109,7 +109,7 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
     res.send('error param');
     return;//此处需要return  不然会重复调用res
   }
-  var photoUrl = 'null';
+  var photoUrl = 'null'
   //此处为base64 数据  我们将其还原为文件
   //base64 图片的格式为 data:image/JPG;base64,
   // 目前我们仅仅考虑 apple手机  都是jpg的格式
@@ -170,7 +170,6 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
     var insert_query = 'insert into golocation (date,user,project_id,location,photo_url) values("'+TimeStamp+'","'+user+'",'+project_id+',"'+location+'","'+photoUrl+'")';
     console.log(insert_query);
 
-    //TODO 定位信息 校准 是否在范围之内
     connection.query(insert_query,function(err,results,fields){
       //console.dir(arguments);
       if(err){
@@ -188,6 +187,7 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
     });
   });
 
+<<<<<<< HEAD
   //查询定位区域的并未加入到主逻辑中 TODO
   // function caculate(location1,location2,diff){
   //   //前端传的时候 $分割
@@ -237,6 +237,15 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
         errorDescription.status='2';
         errorDescription.text='您定位的地址不准确';
         res.json(errorDescription);
+=======
+  Promise.all([promise_check,promise_insert]).then(function (posts){
+    res.send('success');
+  }).catch(function(reason){
+    if(error_flag==-1){
+      res.send('服务器错误');
+    }else{
+      res.send('您不是此项目的负责人，请重新选择或者申请变更');
+>>>>>>> 0895125672424f2c785e8f1896663e1b94a5adc9
     }
   })
 
