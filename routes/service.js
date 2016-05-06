@@ -9,6 +9,7 @@ var express = require('express');
 var fs = require('fs');
 var serviceRouter = express.Router();
 
+//formData 中间件
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
 
@@ -60,7 +61,7 @@ serviceRouter.get('/login', function(req, res) {
       console.log(err.code);
       res.send(err.code+'服务器错误');
 
-    }else if(results[0].password==password){
+  }else if(results[0]&&results[0].password&&results[0].password==password){
       //登录成功
       // callback or promise ? callback!
       // callback hell
@@ -83,7 +84,7 @@ serviceRouter.get('/login', function(req, res) {
       //console.log(Object.getOwnPropertyNames(results[0]));
       //console.log([].slice.call(results));
       //账号密码错误
-      res.send('账号密码错误');
+      res.json({error:'账号密码错误'});
 
     }
   });
@@ -127,6 +128,7 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
     var photo = req.files.photo.path;
   if(photo!==undefined){
     var imageBuf = fs.readFileSync(photo);
+    //同步读入
     var photo_base64 = imageBuf.toString("base64");
     var buffer = photo_base64.replace(/^data:image\/\w+;base64,/, "");
     //将buffer写入文件中
@@ -136,7 +138,6 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
       if(err) console.log(err);
       console.log('saved in '+ photoUrl);
     });
-
   }
   //校验人员一致性
   var error_flag = 0;
@@ -187,7 +188,6 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
     });
   });
 
-<<<<<<< HEAD
   //查询定位区域的并未加入到主逻辑中 TODO
   // function caculate(location1,location2,diff){
   //   //前端传的时候 $分割
@@ -231,29 +231,20 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
         res.json(errorDescription);
     }else if(error_flag==-1){
         errorDescription.status='-1';
-        errorDescription.text='您不是此项目的负责人，请重新选择或者申请变更';
+        //尽管不是负责人，此时还是签到了,所以我们会另外加个标志 表示他是代签到。connection.query('')
+        connection.query('UPDATE golocation SET flag = 1 WHERE photo_url="'+photoUrl+'"');
+        errorDescription.text='您不是此项目的负责人';
         res.json(errorDescription);
     }else{
         errorDescription.status='2';
         errorDescription.text='您定位的地址不准确';
         res.json(errorDescription);
-=======
-  Promise.all([promise_check,promise_insert]).then(function (posts){
-    res.send('success');
-  }).catch(function(reason){
-    if(error_flag==-1){
-      res.send('服务器错误');
-    }else{
-      res.send('您不是此项目的负责人，请重新选择或者申请变更');
->>>>>>> 0895125672424f2c785e8f1896663e1b94a5adc9
     }
-  })
-
-
+});
   //在此处 我们会将 这个文件转存到一个文件夹下，并且，我们会将图片的相对地址存入数据库中。
-
   //以上是我们从参数里拿到的所有数据
   });
+
 
 
 serviceRouter.get('/updateChargeman',function(req,res){
