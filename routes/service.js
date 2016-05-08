@@ -6,9 +6,14 @@
 var async = require('async');
 //async 是一个异步控制的模块 generator原理
 var express = require('express');
+
+var sleep = require('sleep');
 var fs = require('fs');
 var serviceRouter = express.Router();
 
+var fetch = require('fetch').fetchUrl;
+
+var request = require('request');
 //formData 中间件
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
@@ -38,6 +43,7 @@ serviceRouter.use(function timeLog(req, res, next) {
 // 定义网站主页的路由
 
 serviceRouter.get('/', function(req, res) {
+
   res.send('服务商管理页面');
 });
 // 定义 about 页面的路由
@@ -283,6 +289,63 @@ serviceRouter.get('/updateChargeman1',function(req,res){
       res.send('apply error');
     }else{
       res.send('apply success');
+    }
+  });
+});
+
+serviceRouter.get('/getRecent',function(req,res){
+  //TODO
+  var u_id = req.query.user;
+  if(u_id===undefined){
+    res.send('param error');
+    return ;
+    //出口优先
+  }
+  connection.query(`select * from golocation where user='${u_id}' limit 20`,function(err,results,fields){
+    //console.log(results.length);
+    if(err){
+      //console.log(err);
+      res.send('apply error');
+    }else{
+      var resu = [];
+      var index = 0;
+      // results.map(function(val,index,arr){
+      //   val
+      // })
+      var GEOCODER_API= 'http://apis.map.qq.com/ws/geocoder/v1/?key=WEGBZ-JPQK4-R53U5-DGPG2-UIAHF-AOBRL&coord_type=1&location=';
+      async.eachSeries(results, function(item,callback){
+        //console.log(item);
+        resu[index]=JSON.parse(JSON.stringify(item));
+        // deep clone
+        var latitude = item.location.split('$')[0];
+        var longitude = item.location.split('$')[1];
+        request(GEOCODER_API+latitude+','+longitude,function(error,response,body){
+          if (!error && response.statusCode == 200) {
+            body = JSON.parse(body);
+            console.log(body);
+            if(body.result!==undefined){
+              resu[index].address = body.result.address;
+            }
+            index++;
+            sleep.usleep(200000);//微秒
+            callback(null, item);
+          }
+        })
+        // XXX 为啥不支持fetch协议？？？？
+        // fetch(GEOCODER_API+latitude+','+longitude).then(function(data){
+        //   return data.json();
+        // }).then(function(result){
+        //   if(result.message=="query ok"){
+        //     resu[index].address = result.result.address;
+        //   }else{
+        //     console.log('转换出错了');
+        //   }
+        //   index++;
+        //   callback(null, item);
+        // })
+      },function(err){
+        res.json(resu.reverse());
+      })
     }
   });
 });

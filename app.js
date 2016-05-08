@@ -20,6 +20,7 @@ var processRouter = require('./routes/process');
 
 app.use(bodyParser.urlencoded({ limit: '10mb' , extended: true }))
 app.use(bodyParser.json({limit: '10mb'}))
+app.use(express.static(path.join(__dirname,'uploads')));
 //app.use(cpUpload);
 // console.dir(sqlConfig)
 var mysql = require('mysql');
