@@ -47,6 +47,23 @@ serviceRouter.get('/', function(req, res) {
   res.send('服务商管理页面');
 });
 // 定义 about 页面的路由
+//  修改密码接口
+serviceRouter.get('/modify', function(req, res) {
+  var username = req.query.user;
+  var password = req.query.new;
+
+  var queryString = `update user set password='${password}' where user_name='${username}'`;
+  connection.query(queryString,function(err,results,fields){
+    //console.dir(arguments);
+    if(err){
+      console.log(err.code);
+      res.json({status:'err'});
+    }else{
+      res.json({status:'ok'});
+    }
+  });
+});
+
 
 serviceRouter.get('/login', function(req, res) {
   //res.send('About test');
