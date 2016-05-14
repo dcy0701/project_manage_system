@@ -127,7 +127,7 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
   var location = req.body.location;
   var TimeStamp = new Date().getTime();
   //还有这个参数是子工程的id  这个将在更新的时候传递给前端  这个值是可以拿到的
-  var project_id = req.body.project_id;
+  var project_id = decodeURIComponent(req.body.project_id);
   //var photo = req.body.photo;
   if(user===undefined||location===undefined||project_id===undefined){
     res.send('error param');
@@ -149,6 +149,7 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
 //   console.log('It\'s saved!');
 // });
     var photo = req.files.photo.path;
+    console.log(req.files.photo);
   if(photo!==undefined){
     var imageBuf = fs.readFileSync(photo);
     //同步读入
@@ -171,15 +172,15 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
       var result_arr = [];
 
       for(var j of results){
-        result_arr.push(parseInt(j.project_check_id));
+        result_arr.push(j.project_check_id);
       }
       console.log(result_arr);
-      console.log(result_arr.indexOf(parseInt(project_id)));
+      // console.log(result_arr.indexOf(parseInt(project_id)));
       // if(Array.prototype.includes!==undefined){
       //   result_arr.includes(project_id)
       // }
 
-      if(result_arr.indexOf(parseInt(project_id))==-1){
+      if(result_arr.indexOf(project_id)==-1){
         error_flag='-1'
         console.log('负责人出错');
         reject('-1');
@@ -191,7 +192,7 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
 
   //然后将数据写入到 数据库
   var promise_insert = new Promise(function(resolve,reject){
-    var insert_query = 'insert into golocation (date,user,project_id,location,photo_url) values("'+TimeStamp+'","'+user+'",'+project_id+',"'+location+'","'+photoUrl+'")';
+    var insert_query = `insert into golocation (date,user,project_id,location,photo_url) values("${TimeStamp}","${user}","${project_id}","${location}","${photoUrl}")`;
     console.log(insert_query);
 
     connection.query(insert_query,function(err,results,fields){
@@ -211,7 +212,7 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
     });
   });
 
-  //查询定位区域的并未加入到主逻辑中 TODO
+  // 查询定位区域的并未加入到主逻辑中 TODO
   // function caculate(location1,location2,diff){
   //   //前端传的时候 $分割
   //   var location_req = location1.split('$');
@@ -228,7 +229,7 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
   //     if (err){
   //       reject(err);
   //     }else{
-  //         console.log(results);
+  //       console.log(results);
   //       var location_temp = results[0].gps_lat+'$'+results[0].gps_lon;
   //       var result = caculate(location_temp,location,100);
   //       if(result){
@@ -272,14 +273,14 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
 
 serviceRouter.get('/updateChargeman',function(req,res){
   //TODO
-  var project_id = req.query.project_id;
+  var project_id = decodeURIComponent(req.query.project_id);
   var user_id = req.query.user;
   if(project_id===undefined||user_id===undefined){
     res.send('param error');
     return ;
     //出口优先
   }
-  connection.query('update project_check_info set user_id="'+user_id+'" where project_check_id ='+project_id,function(err,results,fields){
+  connection.query('update project_check_info set user_id="'+user_id+'" where project_check_id ="'+project_id+'"',function(err,results,fields){
     //console.log(results.length);
     if(err){
       console.log(err);
@@ -292,7 +293,7 @@ serviceRouter.get('/updateChargeman',function(req,res){
 
 serviceRouter.get('/updateChargeman1',function(req,res){
   //TODO
-  var p_id = req.query.project_id;
+  var p_id = decodeURIComponent(req.query.project_id);
   var u_id = req.query.user;
   if(p_id===undefined||u_id===undefined){
     res.send('param error');
@@ -344,7 +345,7 @@ serviceRouter.get('/getRecent',function(req,res){
               resu[index].address = body.result.address;
             }
             index++;
-            sleep.usleep(200000);//微秒
+            sleep.usleep(95000);//微秒
             callback(null, item);
           }
         })
@@ -392,8 +393,8 @@ serviceRouter.get('/updateProject',function(req, res){
 
     //TODO 记住一定加上callback 回调函数
     async.eachSeries(father_id_array, function(item,callback){
-      console.log(item);
-      connection.query('select id from project_id where father_id='+item,function(err,resultss,fields){
+      console.log('当前操作'+item);
+      connection.query(`select id from project_id where father_id="${item}"`,function(err,resultss,fields){
         console.log(resultss);
         var temp = [];
         for(var j of resultss){
@@ -414,7 +415,7 @@ serviceRouter.get('/updateProject',function(req, res){
       //最后一定会执行，在此处。
       res.json(result_json);
       console.log(err);
-    })
+    });
 
 
     // for(var i of results){
@@ -441,6 +442,52 @@ serviceRouter.get('/updateProject',function(req, res){
   //TODO
 
 });
+
+  serviceRouter.get('/distance',function(req,res){
+    var project_id = decodeURIComponent(req.query.project_id);
+    var latitude = req.query.latitude;
+    var longitude = req.query.longitude;
+
+    connection.query(`select gps_lat,gps_lon from project_table where project_id="${project_id}"`,function(err,results,fields){
+
+      if(err){
+        res.send({status:'error',distance:{message:'无此工程号'}});
+        return;
+      }
+      if(results.length===0){
+        res.json({status:'error',distance:'无此工程号'});
+        return;
+      }
+      console.log(results)
+      //如果结果是null 说明数据库未记录此ID
+      var gps_lat = results[0].gps_lat;
+      console.log(gps_lat);
+      if(String(gps_lat)==='null'){
+        res.json({status:'ok1',distance:'此工程号未记录定位地点，所以在此处不判断'});
+        return;
+      }
+      var gps_lon = results[0].gps_lon;
+      var GEOCODER_API = `http://apis.map.qq.com/ws/distance/v1/?mode=walking&from=${gps_lat},${gps_lon}&to=${latitude},${longitude}&key=WEGBZ-JPQK4-R53U5-DGPG2-UIAHF-AOBRL`;
+      console.log(GEOCODER_API);
+      request(GEOCODER_API,function(error,response,body){
+
+        if (!error && response.statusCode == 200) {
+          body = JSON.parse(body);
+          console.log(body);
+          if(body.result!==undefined&&body.status===0){
+            var distance = body.result.elements[0].distance;
+            res.json({status:'ok',distance:distance});
+          }else{
+            res.json({status:'error',distance:body});
+          }
+        }
+        else{
+          res.json({status:'error',distance:body});
+        }
+      })
+    });
+  });
+
   serviceRouter.post('/location1',function(req, res){
     res.send('just for test');
     }
