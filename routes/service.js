@@ -149,7 +149,6 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
 //   console.log('It\'s saved!');
 // });
     var photo = req.files.photo.path;
-    console.log(req.files.photo);
   if(photo!==undefined){
     var imageBuf = fs.readFileSync(photo);
     //同步读入
@@ -157,13 +156,12 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
     var buffer = photo_base64.replace(/^data:image\/\w+;base64,/, "");
     //将buffer写入文件中
     //console.log(buffer);
-    photoUrl = './upload/'+user+'$'+TimeStamp+'.jpg';
+    photoUrl = './uploads/'+user+'-'+TimeStamp+'.jpg';
     fs.writeFile(photoUrl, buffer, 'base64', function(err) {
       if(err) console.log(err);
       console.log('saved in '+ photoUrl);
     });
   }
-  photoUrl_db = photoUrl.slice(9);
   //校验人员一致性
   var error_flag = 0;
 
@@ -193,7 +191,7 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
 
   //然后将数据写入到 数据库
   var promise_insert = new Promise(function(resolve,reject){
-    var insert_query = `insert into golocation (date,user,project_id,location,photo_url) values("${TimeStamp}","${user}","${project_id}","${location}","${photoUrl_db}")`;
+    var insert_query = `insert into golocation (date,user,project_id,location,photo_url) values("${TimeStamp}","${user}","${project_id}","${location}","${photoUrl}")`;
     console.log(insert_query);
 
     connection.query(insert_query,function(err,results,fields){
