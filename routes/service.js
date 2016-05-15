@@ -155,7 +155,7 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
     var photo_base64 = imageBuf.toString("base64");
     var buffer = photo_base64.replace(/^data:image\/\w+;base64,/, "");
     //将buffer写入文件中
-    //console.log(buffer);
+    console.log(buffer);
     photoUrl = './uploads/'+user+'-'+TimeStamp+'.jpg';
     fs.writeFile(photoUrl, buffer, 'base64', function(err) {
       if(err) console.log(err);
@@ -274,32 +274,44 @@ serviceRouter.get('/updateChargeman',function(req,res){
   //TODO
   var project_id = decodeURIComponent(req.query.project_id);
   var user_id = req.query.user;
+  var flag = req.query.flag;
+  var st = req.query.st;
   if(project_id===undefined||user_id===undefined){
     res.send('param error');
     return ;
     //出口优先
   }
-  connection.query('update project_check_info set user_id="'+user_id+'" where project_check_id ="'+project_id+'"',function(err,results,fields){
+  if(flag==1){
+    connection.query('update project_check_info set user_id="'+user_id+'" where project_check_id ="'+project_id+'"',function(err,results,fields){
+      //console.log(results.length);
+      if(err){
+        console.log(err);
+      }else{
+      }
+    });
+  }
+  connection.query(`delete from project_apply where user_id="${user_id}" AND project_check_id="${project_id}" AND time="${st}"`,function(err,results,fields){
     //console.log(results.length);
     if(err){
       console.log(err);
-      res.send('update error');
     }else{
-      res.send('update success');
     }
   });
+  res.json({status:'ok'});
+
 });
 
 serviceRouter.get('/updateChargeman1',function(req,res){
   //TODO
   var p_id = decodeURIComponent(req.query.project_id);
   var u_id = req.query.user;
+  var date = new Date().getTime();
   if(p_id===undefined||u_id===undefined){
     res.send('param error');
     return ;
     //出口优先
   }
-  connection.query('insert into project_apply (project_check_id,user_id) values ("'+p_id+'","'+u_id+'") ',function(err,results,fields){
+  connection.query('insert into project_apply (project_check_id,user_id,date) values ("'+p_id+'","'+u_id+'","'+date+'") ',function(err,results,fields){
     //console.log(results.length);
     if(err){
       console.log(err);
@@ -318,53 +330,104 @@ serviceRouter.get('/getRecent',function(req,res){
     return ;
     //出口优先
   }
-  connection.query(`select * from golocation where user='${u_id}' limit 20`,function(err,results,fields){
-    //console.log(results.length);
-    if(err){
-      //console.log(err);
-      res.send('apply error');
-    }else{
-      var resu = [];
-      var index = 0;
-      // results.map(function(val,index,arr){
-      //   val
-      // })
-      var GEOCODER_API= 'http://apis.map.qq.com/ws/geocoder/v1/?key=WEGBZ-JPQK4-R53U5-DGPG2-UIAHF-AOBRL&coord_type=1&location=';
-      async.eachSeries(results, function(item,callback){
-        //console.log(item);
-        resu[index]=JSON.parse(JSON.stringify(item));
-        // deep clone
-        var latitude = item.location.split('$')[0];
-        var longitude = item.location.split('$')[1];
-        request(GEOCODER_API+latitude+','+longitude,function(error,response,body){
-          if (!error && response.statusCode == 200) {
-            body = JSON.parse(body);
-            console.log(body);
-            if(body.result!==undefined){
-              resu[index].address = body.result.address;
-            }
-            index++;
-            sleep.usleep(95000);//微秒
-            callback(null, item);
-          }
-        })
-        // XXX 为啥不支持fetch协议？？？？
-        // fetch(GEOCODER_API+latitude+','+longitude).then(function(data){
-        //   return data.json();
-        // }).then(function(result){
-        //   if(result.message=="query ok"){
-        //     resu[index].address = result.result.address;
-        //   }else{
-        //     console.log('转换出错了');
-        //   }
-        //   index++;
-        //   callback(null, item);
+  if(u_id=='all'){
+    connection.query(`select * from golocation limit 100`,function(err,results,fields){
+      //console.log(results.length);
+      if(err){
+        //console.log(err);
+        res.send('apply error');
+      }else{
+        var resu = [];
+        var index = 0;
+        // results.map(function(val,index,arr){
+        //   val
         // })
-      },function(err){
-        res.json(resu.reverse());
-      })
-    }
-  });
+        var GEOCODER_API= 'http://apis.map.qq.com/ws/geocoder/v1/?key=WEGBZ-JPQK4-R53U5-DGPG2-UIAHF-AOBRL&coord_type=1&location=';
+        async.eachSeries(results, function(item,callback){
+          //console.log(item);
+          resu[index]=JSON.parse(JSON.stringify(item));
+          // deep clone
+          var latitude = item.location.split('$')[0];
+          var longitude = item.location.split('$')[1];
+          request(GEOCODER_API+latitude+','+longitude,function(error,response,body){
+            if (!error && response.statusCode == 200) {
+              body = JSON.parse(body);
+              console.log(body);
+              if(body.result!==undefined){
+                resu[index].address = body.result.address;
+              }
+              index++;
+              sleep.usleep(95000);//微秒
+              callback(null, item);
+            }
+          })
+          // XXX 为啥不支持fetch协议？？？？
+          // fetch(GEOCODER_API+latitude+','+longitude).then(function(data){
+          //   return data.json();
+          // }).then(function(result){
+          //   if(result.message=="query ok"){
+          //     resu[index].address = result.result.address;
+          //   }else{
+          //     console.log('转换出错了');
+          //   }
+          //   index++;
+          //   callback(null, item);
+          // })
+        },function(err){
+          res.json(resu.reverse());
+        })
+      }
+    });
+  }else{
+    connection.query(`select * from golocation where user='${u_id}' limit 20`,function(err,results,fields){
+      //console.log(results.length);
+      if(err){
+        //console.log(err);
+        res.send('apply error');
+      }else{
+        var resu = [];
+        var index = 0;
+        // results.map(function(val,index,arr){
+        //   val
+        // })
+        var GEOCODER_API= 'http://apis.map.qq.com/ws/geocoder/v1/?key=WEGBZ-JPQK4-R53U5-DGPG2-UIAHF-AOBRL&coord_type=1&location=';
+        async.eachSeries(results, function(item,callback){
+          //console.log(item);
+          resu[index]=JSON.parse(JSON.stringify(item));
+          // deep clone
+          var latitude = item.location.split('$')[0];
+          var longitude = item.location.split('$')[1];
+          request(GEOCODER_API+latitude+','+longitude,function(error,response,body){
+            if (!error && response.statusCode == 200) {
+              body = JSON.parse(body);
+              console.log(body);
+              if(body.result!==undefined){
+                resu[index].address = body.result.address;
+              }
+              index++;
+              sleep.usleep(95000);//微秒
+              callback(null, item);
+            }
+          })
+          // XXX 为啥不支持fetch协议？？？？
+          // fetch(GEOCODER_API+latitude+','+longitude).then(function(data){
+          //   return data.json();
+          // }).then(function(result){
+          //   if(result.message=="query ok"){
+          //     resu[index].address = result.result.address;
+          //   }else{
+          //     console.log('转换出错了');
+          //   }
+          //   index++;
+          //   callback(null, item);
+          // })
+        },function(err){
+          res.json(resu.reverse());
+        })
+      }
+    });
+  }
+
 });
 
 
@@ -394,14 +457,14 @@ serviceRouter.get('/updateProject',function(req, res){
     async.eachSeries(father_id_array, function(item,callback){
       console.log('当前操作'+item);
       connection.query(`select id from project_id where father_id="${item}"`,function(err,resultss,fields){
-        console.log(resultss);
+        //console.log(resultss);
         var temp = [];
         for(var j of resultss){
             temp.push(j.id);
         }
         result_json[item] = temp;
         //debugger;
-        console.log(result_json);
+        //console.log(result_json);
         //此时 如果item是最后的
         // if(father_id_array[-1]===item){
         //   callback('error')
@@ -441,6 +504,18 @@ serviceRouter.get('/updateProject',function(req, res){
   //TODO
 
 });
+
+  serviceRouter.get('/getapply',function(req,res){
+    connection.query(`select * from project_apply`,function(err,results,fields){
+      if(err){
+        res.send({status:'error',message:'错误'});
+        return;
+      }
+      console.log(results);
+      res.json(results);
+    })
+
+  })
 
   serviceRouter.get('/distance',function(req,res){
     var project_id = decodeURIComponent(req.query.project_id);
