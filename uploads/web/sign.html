@@ -268,7 +268,7 @@
 <script src="js/custom.js"></script>
 <script>
 	$(function(){
-		fetch('http://localhost:3000/s/getRecent?user=all').then(function(data){
+		fetch('../../s/getRecent?user=all').then(function(data){
 			return data.json();
 			console.log(data);
 		}).then(function(json){
