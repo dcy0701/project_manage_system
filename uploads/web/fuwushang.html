@@ -268,7 +268,6 @@
 <script src="js/custom.js"></script>
 <script>
 	$(function(){
-		var host =
 		fetch('../../s/getapply').then(function(data){
 			return data.json();
 			console.log(data);
@@ -287,6 +286,7 @@
 				var currentline = json[index];
 				console.log(currentline);
 				fetch(`../../s/updateChargeman?user=${currentline.user_id}&project_id=${currentline.project_check_id}&flag=1&st=${st}`).then(function(data){
+					$this.parent()&&$this.parent().hide();
 					return;
 					console.log(data);
 				})
@@ -299,7 +299,7 @@
 				console.log(currentline);
 				var $this = $(this);
 				fetch(`../../s/updateChargeman?user=${currentline.user_id}&project_id=${currentline.project_check_id}&flag=0&st=${st}`).then(function(data){
-					$this.hide();
+					$this.parent()&&$this.parent().hide();
 					return;
 					console.log(data);
 				})
