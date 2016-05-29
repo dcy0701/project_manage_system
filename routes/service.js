@@ -380,7 +380,7 @@ serviceRouter.get('/getRecent',function(req,res){
       }
     });
   }else{
-    connection.query(`select * from golocation where user='${u_id}' order by id desc limit 20`,function(err,results,fields){
+    connection.query(`select * from golocation where user='${u_id}' order by id limit 20`,function(err,results,fields){
       //console.log(results.length);
       if(err){
         //console.log(err);
