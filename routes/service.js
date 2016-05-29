@@ -311,7 +311,7 @@ serviceRouter.get('/updateChargeman1',function(req,res){
     return ;
     //出口优先
   }
-  connection.query('insert into project_apply (project_check_id,user_id,date) values ("'+p_id+'","'+u_id+'","'+date+'") ',function(err,results,fields){
+  connection.query('insert into project_apply (project_check_id,user_id,time) values ("'+p_id+'","'+u_id+'","'+date+'") ',function(err,results,fields){
     //console.log(results.length);
     if(err){
       console.log(err);
@@ -349,6 +349,7 @@ serviceRouter.get('/getRecent',function(req,res){
           // deep clone
           var latitude = item.location.split('$')[0];
           var longitude = item.location.split('$')[1];
+          console.log(GEOCODER_API+latitude+','+longitude);
           request(GEOCODER_API+latitude+','+longitude,function(error,response,body){
             if (!error && response.statusCode == 200) {
               body = JSON.parse(body);
@@ -515,7 +516,7 @@ serviceRouter.get('/updateProject',function(req, res){
       res.json(results);
     })
 
-  })
+  });
 
   serviceRouter.get('/distance',function(req,res){
     var project_id = decodeURIComponent(req.query.project_id);
