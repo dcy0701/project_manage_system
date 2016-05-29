@@ -380,7 +380,7 @@ serviceRouter.get('/getRecent',function(req,res){
       }
     });
   }else{
-    connection.query(`select * from golocation where user='${u_id}' limit 20`,function(err,results,fields){
+    connection.query(`select * from golocation where user='${u_id}' order by id desc limit 20`,function(err,results,fields){
       //console.log(results.length);
       if(err){
         //console.log(err);
@@ -550,7 +550,7 @@ serviceRouter.get('/updateProject',function(req, res){
           body = JSON.parse(body);
           console.log(body);
           if(body.result!==undefined&&body.status===0){
-            var distance = body.result.elements[0].distance;
+            var distance = parseInt(body.result.elements[0].distance);
             res.json({status:'ok',distance:distance});
           }else{
             res.json({status:'error',distance:body});
