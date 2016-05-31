@@ -551,7 +551,7 @@ serviceRouter.get('/updateProject',function(req, res){
           console.log(body);
           if(body.result!==undefined&&body.status===0){
             var distance = parseInt(body.result.elements[0].distance);
-            res.json({status:'ok',distance:distance});
+            res.json({status:'ok',distance:String(distance)});
           }else{
             res.json({status:'error',distance:body});
           }
