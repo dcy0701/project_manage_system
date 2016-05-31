@@ -286,7 +286,9 @@ serviceRouter.get('/updateChargeman',function(req,res){
       //console.log(results.length);
       if(err){
         console.log(err);
+        res.json({err:err});
       }else{
+          
       }
     });
   }
@@ -294,10 +296,11 @@ serviceRouter.get('/updateChargeman',function(req,res){
     //console.log(results.length);
     if(err){
       console.log(err);
+      res.json({err:err});
     }else{
-    }
+    }res.json({status:'ok'});
   });
-  res.json({status:'ok'});
+  
 
 });
 
