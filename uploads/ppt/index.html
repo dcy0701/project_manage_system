@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>毕设中期报告</title>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/league.css" id="theme">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<div class="reveal">
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section class="main-page">
+						<section  data-markdown>
+							<script type="text/template">
+								### GRADUATE PAPER DEFENSE
+								### 项目管理系统中服务商管理模块的设计与实现
+
+
+								<small style="margin-top:250px">
+			                          <a style="color:#1ab11d" href="#/1">董崇洋@April 2016</a>
+			          </small>
+								##### <small style="color:pink;margin-top:50px;">指导老师：谷勇浩</small>
+
+							</script>
+						</section>
+						<section>
+							<h2>源码地址</h2>
+							<a style="color:#1ab11d" href="https://github.com/dcy0701/mid-term-ppt">github</a>
+							<br/>
+							<br/>
+							<code style="margin-top:200px">
+								https://github.com/dcy0701/mid-term-ppt
+							</code>
+						</section>
+				</section>
+
+                <section data-markdown data-separator="---" data-separator-vertical="--" data-background="#b5533c" data-background-transition="zoom">
+                    <script type="text/template">
+                        ### 董崇洋
+
+
+                        <small>北邮计算机19班</small>
+
+                        <small>
+                            <a href="http://byr.pub">Blog</a> /
+                            <a href="http://weibo.com/979325848">@董崇洋</a> /
+                            <a href="https://github.com/dcy0701">GitHub</a> /
+                            <a href="http://www.zhihu.com/people/yang-dong-95-17">知乎</a>
+                        </small>
+                    </script>
+                </section>
+
+				<section data-markdown data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+					<script type="text/template">
+						### 论文选题和背景意义
+						<br>
+						<br>
+						<small>
+						本课题旨在建立一套建设大数据管理平台，该平台在纵向要涵盖项目的各个环节，
+						实现项目从立项-设计-施工-采购-验收的全生命周期管理，实现信息共享与关联分析。
+						通过该平台可实现对项目的实时管控，使项目建设的各环节实现透明化。
+						</small>
+						<img src="./1.png" width="600px" />
+						---
+						<small>
+						本人负责其中的服务商管理部分。
+						</small>
+
+					</script>
+				</section>
+				<section data-markdown data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+					<script type="text/template">
+						### 需求分析
+
+						* <font color="#36e139">基于 *React Native* 的IOS 手机客户端开发</font>
+						<!-- .element: class="fragment" -->
+						* <font color="#36e139">基于 *Node* 和 *Mysql* 的项目管理系统服务商管理部分</font>
+						<!-- .element: class="fragment" -->
+						* <font color="#36e139">基于 *jQuery* 和 *BootStrap* 的项目管理系统服务商管理前端部分</font>
+						<!-- .element: class="fragment" -->
+
+					</script>
+				</section>
+				<section>
+					<section data-markdown data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+						<script type="text/template">
+							### 基于 *React Native* 的IOS 手机客户端开发
+
+							* 登陆逻辑
+							* 修改密码逻辑
+							* 退出登陆逻辑
+							* 加载页面逻辑(动画逻辑)
+							* 主页逻辑
+							* 签到页面逻辑
+							* 最近签到记录页面逻辑(下拉刷新功能，替代签到显示功能等)
+						</script>
+					</section>
+					<section data-markdown data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+						<script type="text/template">
+							### 基于 *React Native* 的IOS 手机客户端开发
+
+							* 个人中心逻辑（包括个人信息，当前用户权限，当前用户所用网络，所属区域，关于作者）
+							* 拍照页面逻辑(拍照界面，拍照模式选择，照片存储方式，照片设置唯一ID)
+							* 照片上传与展示逻辑(照片base64转换，照片展示，照片设置唯一ID)
+							* 位置判断逻辑
+							* 负责人判断与申请逻辑
+							* 定位页面逻辑(包括工程选取，工程名检查，工程刷新，定位以及当前经纬度展示，位置展示，逆坐标转换，经纬度在高德地图展示)
+						</script>
+					</section>
+
+					<section data-markdown data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+						<script type="text/template">
+							### 基于 *jQuery* 和 *BootStrap* 的项目管理系统服务商管理前端部分
+							<br>
+							<br>
+							1. 最近签到记录展示界面
+							2. 用户负责人申请记录查看以及操作
+						</script>
+					</section>
+
+					<section data-markdown data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+						<script type="text/template">
+							### 基于 *Node* 和 *Mysql* 的项目管理系统服务商管理部分
+
+							1. /s/modify;
+							2. /s/login;
+							3. /s/location;
+							4. /s/updateChargeman;
+							5. /s/updateChargeman1;
+							6. /s/getRecent;
+							7. /s/updateProject;
+							8. /s/Getapply;
+							9. /s/Distance;
+						</script>
+					</section>
+				</section>
+
+				<section>
+					<section data-markdown data-background="#b5533c" data-background-transition="zoom">
+						<script type="text/template">
+							## 成果展示
+						</script>
+					</section>
+					<section data-markdown data-background="#b5533c" data-background-transition="zoom">
+						<script type="text/template">
+
+						</script>
+					</section>
+				</section>
+
+                <section data-markdown  data-transition="slide" data-background-transition="fade">
+                    <script type="text/template">
+
+                    </script>
+                </section>
+
+
+                <section data-markdown data-background="#b5533c" data-background-transition="zoom">
+                    <script type="text/template">
+
+                    </script>
+                </section>
+
+                <section data-background-transition="convex">
+
+
+
+                </section>
+
+								<section>
+									<section data-markdown data-background="#4d7e65" data-background-transition="zoom">
+										<script type="text/template">
+
+										</script>
+									</section>
+									<section data-markdown data-background="#b5533c" data-background-transition="zoom">
+										<script type="text/template">
+
+										</script>
+									</section>
+								</section>
+
+        <section data-markdown data-background="#4d7e65" data-background-transition="concave">
+					<h2>Have a look! </h2>
+				</section>
+
+				<section data-background="#b5533c" data-background-transition="zoom">
+
+
+                </section>
+
+                <section data-background="#4d7e65" data-background-transition="concave">
+
+                </section>
+
+                <section>
+
+                </section>
+
+				<section data-markdown data-background="#4d7e65" data-background-transition="zoom">
+                    <script type="text/template">
+
+                    </script>
+                </section>
+
+        <section data-background="#b5533c" data-background-transition="fade">
+					<h2 style="color:#36e139" ></h2>
+				</section>
+
+                <section>
+
+                </section>
+
+                <section>
+
+                </section>
+
+                <section data-markdown data-background="#4d7e65" data-background-transition="zoom">
+                    <script type="text/template">
+
+                    </script>
+                </section>
+
+				<section data-background="#4d7e65" data-background-transition="slide">
+					<h2>Q & A </h2>
+				</section>
+				<section>
+					<section data-background="#b5533c" data-background-transition="zoom">
+						<h2>Thanks</h2>
+					</section>
+					<section >
+
+					</section>
+					<section data-background="#b5533c" data-background-transition="fade">
+						<h1>I just want to say that all of this is rubbish.</h1>
+					</section>
+				</section>
+
+			</div>
+		</div>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script>
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
