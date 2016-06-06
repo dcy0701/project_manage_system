@@ -21,6 +21,45 @@
 		<!--[if lt IE 9]>
 		<script src="lib/js/html5shiv.js"></script>
 		<![endif]-->
+		<style>
+			.right{
+				font-size: 28px !important;
+				position: absolute;
+				right: 100px;
+				top: 100px;
+				width: 400px;
+				height: 400px;
+			}
+			.reveal p .left{
+
+				position: absolute;
+				left: 100px;
+				top: 100px;
+				width:300px;
+				height: 530px;
+				max-height: 530px;
+			}
+			#smmmm,#smmm{
+				font-size: 24px !important;
+			}
+			.reveal p .left1{
+
+				position: absolute;
+				left: -150px;
+				top: 100px;
+				width:700px;
+				height: 530px;
+				max-height: 530px;
+			}
+			.right1{
+				font-size: 28px !important;
+				position: absolute;
+				right: -80px;
+				top: 100px;
+				width: 400px;
+				height: 400px;
+			}
+		</style>
 	</head>
 	<body>
 		<div class="reveal">
@@ -34,7 +73,7 @@
 
 
 								<small style="margin-top:250px">
-			                          <a style="color:#1ab11d" href="#/1">董崇洋@April 2016</a>
+			                          <a style="color:#1ab11d" href="#/1">董崇洋@June 2016</a>
 			          </small>
 								##### <small style="color:pink;margin-top:50px;">指导老师：谷勇浩</small>
 
@@ -160,83 +199,150 @@
 					</section>
 					<section data-markdown data-background="#b5533c" data-background-transition="zoom">
 						<script type="text/template">
-
+							现场演示 http://cccy.pub/web
 						</script>
 					</section>
 				</section>
 
-                <section data-markdown  data-transition="slide" data-background-transition="fade">
-                    <script type="text/template">
+				<section>
+	                <section data-markdown  data-background="#b5533c" data-transition="slide" data-background-transition="fade">
+	                    <script type="text/template">
+							## 具体实现流程
+	                    </script>
+	                </section>
+					<section data-markdown  data-background="#b5533c" data-transition="slide" data-background-transition="fade">
+						<script type="text/template">
+							### 基于 *Node* 和 *Mysql* 的项目管理系统服务商管理部分
+							<img src="./3.png" width="860px" />
+						</script>
+					</section>
+					<section data-markdown data-background="#4d7e65" data-background-transition="zoom">
+						<script type="text/template">
+							### 基于 *React Native* 的IOS 手机客户端开发
+							<img class="left" src="./11.png" width="280px" />
+							<div class="right">本模块有一个放大的动画，将整个图片线性放大1.2倍，
+								用户将会看到一个渐显的动画。并且会在下方展示APP的作者信息。
+								此模块会在应用启动2秒后转换到其他的UI模块
+							</div>
+						</script>
+					</section>
+					<section data-markdown data-background="#4d7e65" data-background-transition="zoom">
+						<script type="text/template">
+							### 基于 *React Native* 的IOS 手机客户端开发
+							<img class="left" src="./12.png" width="300px" />
+							<div class="right">此部分利用到的知识点包含：react-native-vector-icons/FontAwesome
+								以及FlexBox
+								用户在登录成功时候，会将接口返回的用户元数据保存到缓存中。并且设置状态，跳转到主页。
+							</div>
+						</script>
+					</section>
+					<section data-markdown data-background="#4d7e65" data-background-transition="zoom">
+						<script type="text/template">
+							### 基于 *React Native* 的IOS 手机客户端开发
+							<img class="left" src="./13.png" width="300px" />
+							<div class="right">原密码会与缓存中的数据比较，当输入正确的密码时，会调用/s/modify接口，达到修改密码的目的，当密码修改完毕，用户在下一次启动APP的时候，就会在自动登录的时候直接进入登录页。</div>
+						</script>
+					</section>
+					<section data-markdown data-background="#4d7e65" data-background-transition="zoom">
+						<script type="text/template">
+							### 基于 *React Native* 的IOS 手机客户端开发
+							<img class="left" src="./14.png" width="300px" />
+							<div class="right">签到页面的主要知识点是GPS定位，高德地图展示，二级菜单选择。主要是逻辑是 首先更新工程的二级菜单，然后调用apple 手机的GPS定位系统，拿到当前的经纬度，然后调用/s/distance得到当前位置与所属工程的地址距离间隔。判断是否小于签到成功的值，如果小于则前往拍照，如果不小于则提醒距离过远</div>
+						</script>
+					</section>
+					<section data-markdown data-background="#4d7e65" data-background-transition="zoom">
+						<script type="text/template">
+							### 基于 *React Native* 的IOS 手机客户端开发
+							<img class="left" src="./15.jpg" width="300px" />
+							<div class="right">拍照页面主要的知识点是react-native-camera，是第三方提供的开源组件,本课题依据此组件配置了拍照的存储位置，使用后置摄像头拍照，以及拍照按钮。点击拍照按钮后，会触发拍照事件，将照片保存的位置保存下来，传递给路由。并且将上级路由传递的数据传递到下一级的路由</div>
+						</script>
+					</section>
+					<section data-markdown data-background="#4d7e65" data-background-transition="zoom">
+						<script type="text/template">
+							### 基于 *React Native* 的IOS 手机客户端开发
+							<img class="left" src="./16.jpg" width="300px" />
+							<div id="smmm" class=" right">
+									通过Image组件将上层路由传递的数据展示出来，然后点击签到后，会以POST请求的形式，通过Fetch API调用后端的/s/location 接口。通过formdata的方式传递。
+									实例化一个formdata对象，将用户的ID，当前的工程号(通过签到主界面在路由中传递过来)，当前的位置信息(通过签到主界面在路由中传递过来)，图片数据地址。
+									然后通过Fetch API调用接口，会有以下几种结果。
+									签到成功和您不是负责人，如果结果是你不是负责人，那么会提醒他是否申请为负责人。然后调用申请负责人接口，在申请成功后会提醒其申请成功。 然后返回到调用路由的popToTop() 回到最顶层的路由--主界面。
+							</div>
+						</script>
+					</section>
+					<section data-markdown data-background="#4d7e65" data-background-transition="zoom">
+						<script type="text/template">
+							### 基于 *React Native* 的IOS 手机客户端开发
+							<img class="left" src="./17.jpg" width="300px" />
+							<div class="right">
+								最近签到数据展示界面的主要知识点是ListView、ListViewDataSource、Animated、RefreshControl。列表组件，动画组件，下拉刷新控制。在上述的载入界面我们进行了一个渐显的动画，此处本课题加入了一个loading的动画，通过改变rotation，使其不断旋转，并且在数据加载完成后消失。
+								本课题在动画开始前就已经去后台加载数据了，因为腾讯地图API的限制，这一过程并不会很快，所以本课题需要短暂的等待，大约1-2秒左右
+							</div>
+						</script>
+					</section>
+					<section data-markdown data-background="#4d7e65" data-background-transition="zoom">
+						<script type="text/template">
+							### 基于 *React Native* 的IOS 手机客户端开发
+							<img class="left" src="./18.png" width="300px" />
+							<div id="smmmm" class="right">
+								个人信息展示部分主要有5个列表以及两个按钮组成，列表显示信息包括当前用户，
+								所属区域，用户权限，当前网络以及关于作者。用户、用户权限以及区域通过访问缓存中的元数据拿到，
+								而当前网络通过netInfo API得到，以异步的方式判断设备是否联网，以及是否使用了移动数据网络。
+								两个按钮分别是修改密码以及退出登录。当点击修改密码时候会进入修改密码界面，点击推出登录时候，会提醒是否确定退出登录。如果确定退出登录，会调用路由传递过来的logout方法，改变当前APP所属的状态，去掉loginstatus 属性，达到退出登录的目的。
+							</div>
+						</script>
+					</section>
+					<section data-markdown data-background="#4d7e65" data-background-transition="zoom">
+						<script type="text/template">
+							##### 基于 *jQuery* 和 *BootStrap* 的项目管理系统服务商管理前端部分
+							<img class="left1" src="./22.png" width="300px" />
+							<div  class="right1">
+								最近签到记录的相对地址是/web/sign.html，可以通过主界面选项卡访问到。本逻辑的所有代码在DOM ready事件发生后执行。
+								DOM Ready之后，会调用后台的recent接口，
+								获取最近的签到记录，然后对数据进行处理，将图片地址转换为相对地址，
+								时间戳格式化为时间信息，通过artTemplate展现到页面上。
+							</div>
+						</script>
+					</section>
+					<section data-markdown data-background="#4d7e65" data-background-transition="zoom">
+						<script type="text/template">
+							##### 基于 *jQuery* 和 *BootStrap* 的项目管理系统服务商管理前端部分
+							<img class="left1" src="./21.png" width="300px" />
+							<div  class="right1">
+								最近申请记录的相对地址是/web/fuwushang.html，也可以通过主界面选项卡访问到。
+								DOM Ready之后，会调用后台的apply接口，获取申请记录，然后对数据进行处理，将图片地址转换为相对地址，时间戳格式化为时间信息，
+								通过artTemplate展现到页面上。
+								然后当用户以管理员身份登录时候，具有拒绝和同意申请的权限。
+								当用户点击拒绝或者同意的情况下，会向后台发送数据，调用后台接口updateChargeman。
 
-                    </script>
-                </section>
+							</div>
+						</script>
+					</section>
+				</section
 
-
-                <section data-markdown data-background="#b5533c" data-background-transition="zoom">
-                    <script type="text/template">
-
-                    </script>
-                </section>
-
-                <section data-background-transition="convex">
-
-
-
-                </section>
-
-								<section>
-									<section data-markdown data-background="#4d7e65" data-background-transition="zoom">
-										<script type="text/template">
-
-										</script>
-									</section>
-									<section data-markdown data-background="#b5533c" data-background-transition="zoom">
-										<script type="text/template">
-
-										</script>
-									</section>
-								</section>
-
-        <section data-markdown data-background="#4d7e65" data-background-transition="concave">
-					<h2>Have a look! </h2>
+				<section data-markdown data-background="#b5533c" data-background-transition="zoom">
+					<script type="text/template">
+						### 创新点
+						1. React Native
+						2. Redux
+						3. ES2015 和 ES2016
+						4. 安全性
+					</script>
 				</section>
 
-				<section data-background="#b5533c" data-background-transition="zoom">
+				<section data-markdown data-background="#b5533c" data-background-transition="zoom">
+					<script type="text/template">
+						#### 总结
 
-
-                </section>
-
-                <section data-background="#4d7e65" data-background-transition="concave">
-
-                </section>
-
-                <section>
-
-                </section>
-
-				<section data-markdown data-background="#4d7e65" data-background-transition="zoom">
-                    <script type="text/template">
-
-                    </script>
-                </section>
-
-        <section data-background="#b5533c" data-background-transition="fade">
-					<h2 style="color:#36e139" ></h2>
+						本课题利用了很多最前沿的新兴技术，
+						在语言层次使用了ES协会2015年标准的ES2015 和 2016年标准的ES2016 ，
+						在IOS APP框架选择了Facebook React Native ，
+						在状态管理上选择了当前最难的Redux方案等，
+						并且利用了很多先进的思想以及面向未来的框架。
+						本课题选择的技术都是非常有深度的，当然也使我受益良多。
+						能够将当前最前沿的技术顺利完成和展现对我来讲是一件非常有难度的事情。
+						当然也有一些不足之处，比如选取的后端框架对于异步的处理并不好，包括国内也有一些其他的解决方案。
+					</script>
 				</section>
-
-                <section>
-
-                </section>
-
-                <section>
-
-                </section>
-
-                <section data-markdown data-background="#4d7e65" data-background-transition="zoom">
-                    <script type="text/template">
-
-                    </script>
-                </section>
 
 				<section data-background="#4d7e65" data-background-transition="slide">
 					<h2>Q & A </h2>
