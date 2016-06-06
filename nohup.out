@@ -3,3 +3,5162 @@ system
 数据库成功连接
 进入数据库
 监听3000端口
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (/root/project/project_manage_system/node_modules/mysql/lib/protocol/Protocol.js:109:13)
+    at Socket.<anonymous> (/root/project/project_manage_system/node_modules/mysql/lib/Connection.js:102:28)
+    at emitNone (events.js:72:20)
+    at Socket.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:913:12)
+    at nextTickCallbackWith2Args (node.js:442:9)
+    at process._tickCallback (node.js:356:17)
+system
+system
+数据库成功连接
+进入数据库
+监听3000端口
+system
+system
+数据库成功连接
+进入数据库
+监听3000端口
+Time:  1463217867852
+[0mGET /s/login [32m200 [0m4.372 ms - 39[0m
+Hangup
+system
+system
+数据库成功连接
+进入数据库
+监听3000端口
+system
+system
+数据库成功连接
+进入数据库
+监听3000端口
+Time:  1463229315794
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m33.880 ms - -[0m
+Time:  1463229317791
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m22.157 ms - -[0m
+Time:  1463229339579
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137228672400525004',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+[0mGET /s/getRecent?user=dcy&1463229339511 [32m200 [0m251.633 ms - 232[0m
+Time:  1463229341685
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137228681090809014',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+[0mGET /s/getRecent?user=dcy&1463229341612 [32m200 [0m219.532 ms - 232[0m
+Time:  1463229355741
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m2.414 ms - -[0m
+Time:  1463229355855
+[0mGET /s/modify?user=dcy&new=dcy0701 [32m200 [0m9.388 ms - 15[0m
+Time:  1463229366991
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m3.058 ms - -[0m
+Time:  1463229367119
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m19.478 ms - -[0m
+Time:  1463229565868
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137229621441113201',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+[0mGET /s/getRecent?user=dcy&1463229565759 [32m200 [0m222.256 ms - 232[0m
+Time:  1463229574384
+[0mGET /s/distance?project_id=0&latitude=37.33382049&longitude=-122.04151898 [32m200 [0m2.059 ms - 47[0m
+Time:  1463229577868
+[ RowDataPacket { gps_lat: null, gps_lon: null } ]
+null
+[0mGET /s/distance?project_id=%E5%8C%97%E4%BA%A4&latitude=37.33382049&longitude=-122.04151898 [32m200 [0m1.728 ms - 90[0m
+Time:  1463229580042
+{ location: '37.33382049$-122.04151898',
+  project_id: '北交',
+  user: 'dcy' }
+{ fieldName: 'photo',
+  originalFilename: 'image.jpg',
+  path: '/tmp/n8fWENAiB5hOCJ_G7fAwUiQH.jpg',
+  headers: 
+   { 'content-disposition': 'form-data; name="photo"; filename="image.jpg"',
+     'content-type': 'image/jpeg' },
+  size: 313341,
+  name: 'image.jpg',
+  type: 'image/jpeg' }
+insert into golocation (date,user,project_id,location,photo_url) values("1463229580476","dcy","北交","37.33382049$-122.04151898","./uploads/dcy-1463229580476.jpg")
+[ '123' ]
+负责人出错
+-1
+[0mPOST /s/location [32m200 [0m442.194 ms - 55[0m
+saved in ./uploads/dcy-1463229580476.jpg
+Time:  1463229581390
+[0mGET /s/updateChargeman1?user=dcy&project_id=%E5%8C%97%E4%BA%A4 [36m304 [0m6.467 ms - -[0m
+Time:  1463229585247
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137229702824018056',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137229705138488328',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+[0mGET /s/getRecent?user=dcy&1463229585138 [32m200 [0m797.022 ms - 417[0m
+Time:  1463229591882
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137229730509792586',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137229731324158005',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+[0mGET /s/getRecent?user=dcy&1463229591810 [32m200 [0m737.812 ms - 414[0m
+Time:  1463229595928
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137229747522276889',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137229748427929507',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+[0mGET /s/getRecent?user=dcy&1463229595861 [32m200 [0m457.221 ms - 466[0m
+Time:  1463229598184
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137229757060123960',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137229758004283092',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+[0mGET /s/getRecent?user=dcy&1463229598114 [32m200 [0m775.955 ms - 414[0m
+Time:  1463229603569
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137229779579025920',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137229780514669527',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+[0mGET /s/getRecent?user=dcy&1463229603501 [32m200 [0m454.370 ms - 466[0m
+Time:  1463229809529
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m2.635 ms - -[0m
+Time:  1463229809661
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m8.569 ms - -[0m
+Time:  1463229813048
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137230658185673794',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137230659372797326',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+[0mGET /s/getRecent?user=dcy&1463229812979 [32m200 [0m863.215 ms - 414[0m
+Time:  1463229816154
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137230671267563639',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137230673305516807',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+[0mGET /s/getRecent?user=dcy&1463229816085 [32m200 [0m737.115 ms - 417[0m
+Time:  1463232329921
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137241214686803543',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137241215629870836',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+[0mGET /s/getRecent?user=dcy&1463232329814 [32m200 [0m446.739 ms - 466[0m
+Time:  1463232338435
+[ RowDataPacket { gps_lat: null, gps_lon: null } ]
+null
+[0mGET /s/distance?project_id=%E5%8C%97%E5%B8%88&latitude=37.33034112&longitude=-122.02915992 [32m200 [0m2.010 ms - 90[0m
+Time:  1463232340673
+{ location: '37.33034112$-122.02915992',
+  project_id: '北师',
+  user: 'dcy' }
+{ fieldName: 'photo',
+  originalFilename: 'image.jpg',
+  path: '/tmp/e_cj_5WK11WNX0NMXf3DZCWx.jpg',
+  headers: 
+   { 'content-disposition': 'form-data; name="photo"; filename="image.jpg"',
+     'content-type': 'image/jpeg' },
+  size: 314101,
+  name: 'image.jpg',
+  type: 'image/jpeg' }
+insert into golocation (date,user,project_id,location,photo_url) values("1463232341999","dcy","北师","37.33034112$-122.02915992","./uploads/dcy-1463232341999.jpg")
+[ '123' ]
+负责人出错
+-1
+[0mPOST /s/location [32m200 [0m1331.063 ms - 55[0m
+saved in ./uploads/dcy-1463232341999.jpg
+Time:  1463232343838
+[0mGET /s/updateChargeman1?user=dcy&project_id=%E5%8C%97%E5%B8%88 [32m200 [0m8.320 ms - 13[0m
+Time:  1463232347888
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137241290125249471',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137241291119386781',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137241291970906531',
+  result: 
+   { location: { lat: 37.330341, lng: -122.02916 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+[0mGET /s/getRecent?user=dcy&1463232347814 [32m200 [0m972.081 ms - 648[0m
+Time:  1463232351455
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137241305216662019',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137241306239380911',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137241307162954537',
+  result: 
+   { location: { lat: 37.330341, lng: -122.02916 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+[0mGET /s/getRecent?user=dcy&1463232351387 [32m200 [0m1015.307 ms - 648[0m
+Time:  1463232354335
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137241317182865701',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137241319326281003',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137241321578640491',
+  result: 
+   { location: { lat: 37.330341, lng: -122.02916 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县' } }
+[0mGET /s/getRecent?user=dcy&1463232354261 [32m200 [0m1298.737 ms - 583[0m
+Time:  1463238625588
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m3.434 ms - -[0m
+Time:  1463238627615
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m9.309 ms - -[0m
+Time:  1463238637531
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137267670749710822',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137267671718207868',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137267672595648104',
+  result: 
+   { location: { lat: 37.330341, lng: -122.02916 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+[0mGET /s/getRecent?user=dcy&1463238637476 [32m200 [0m970.149 ms - 648[0m
+Time:  1463238658028
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m3.481 ms - -[0m
+Time:  1463238660010
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m8.247 ms - -[0m
+Time:  1463240086232
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m2.677 ms - -[0m
+Time:  1463240088220
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m9.082 ms - -[0m
+Time:  1463241953800
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m2.841 ms - -[0m
+Time:  1463241955852
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m8.582 ms - -[0m
+Time:  1463242017148
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m1.826 ms - -[0m
+Time:  1463242019203
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m9.935 ms - -[0m
+Time:  1463242236499
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137282765927828242',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137282766830036839',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137282767827848362',
+  result: 
+   { location: { lat: 37.330341, lng: -122.02916 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县' } }
+[0mGET /s/getRecent?user=dcy&1463242236416 [32m200 [0m672.184 ms - 684[0m
+Time:  1463242449818
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [32m200 [0m2.613 ms - 51[0m
+Time:  1463242449957
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [32m200 [0m8.138 ms - 220[0m
+Time:  1463242547832
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137284071678363959',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137284073817304602',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137284075914168543',
+  result: 
+   { location: { lat: 37.330341, lng: -122.02916 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县' } }
+[0mGET /s/getRecent?user=dcy&1463242547735 [32m200 [0m1216.792 ms - 583[0m
+Time:  1463242556946
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137284109888473187',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137284112652520040',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137284115310879970',
+  result: 
+   { location: { lat: 37.330341, lng: -122.02916 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县' } }
+[0mGET /s/getRecent?user=dcy&1463242556891 [32m200 [0m1800.607 ms - 583[0m
+Time:  1463242565073
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137284144059333313',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137284144998165826',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137284145967050298',
+  result: 
+   { location: { lat: 37.330341, lng: -122.02916 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县' } }
+[0mGET /s/getRecent?user=dcy&1463242565021 [32m200 [0m670.587 ms - 684[0m
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (/root/project/project_manage_system/node_modules/mysql/lib/protocol/Protocol.js:109:13)
+    at Socket.<anonymous> (/root/project/project_manage_system/node_modules/mysql/lib/Connection.js:102:28)
+    at emitNone (events.js:72:20)
+    at Socket.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:913:12)
+    at nextTickCallbackWith2Args (node.js:442:9)
+    at process._tickCallback (node.js:356:17)
+system
+system
+数据库成功连接
+进入数据库
+监听3000端口
+[0mGET /favicon.ico [33m404 [0m1053.031 ms - 1166[0m
+Time:  1463283182795
+[0mGET /s [36m304 [0m2.034 ms - -[0m
+Hangup
+system
+system
+数据库成功连接
+进入数据库
+监听3000端口
+Time:  1463283289764
+[0mGET /s [36m304 [0m7.904 ms - -[0m
+Time:  1463283403015
+[0mGET /s [36m304 [0m3.864 ms - -[0m
+Time:  1463285543864
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [32m200 [0m28.055 ms - 51[0m
+Time:  1463285544202
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [32m200 [0m18.907 ms - 220[0m
+Time:  1463285558697
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137464472522045256',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137464473528678555',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137464474438812917',
+  result: 
+   { location: { lat: 37.330341, lng: -122.02916 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县' } }
+[0mGET /s/getRecent?user=dcy&1463285558529 [32m200 [0m699.386 ms - 684[0m
+Time:  1463285613130
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137464700771872804',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137464701745575263',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137464702714242902',
+  result: 
+   { location: { lat: 37.330341, lng: -122.02916 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县' } }
+[0mGET /s/getRecent?user=dcy&1463285612925 [32m200 [0m698.978 ms - 684[0m
+Time:  1463285625636
+[ RowDataPacket { gps_lat: null, gps_lon: null } ]
+null
+[0mGET /s/distance?project_id=%E5%8C%97%E4%BA%A4&latitude=39.9607963560584&longitude=116.3498382568359 [32m200 [0m4.516 ms - 90[0m
+Time:  1463285639258
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m2.608 ms - -[0m
+Time:  1463285640372
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m15.928 ms - -[0m
+Time:  1463285644352
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137464831776695639',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137464832754661521',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137464833752255412',
+  result: 
+   { location: { lat: 37.330341, lng: -122.02916 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县' } }
+[0mGET /s/getRecent?user=dcy&1463285644197 [32m200 [0m710.298 ms - 684[0m
+Time:  1463285649670
+[ RowDataPacket { gps_lat: null, gps_lon: null } ]
+null
+[0mGET /s/distance?project_id=%E5%8C%97%E4%BA%A4&latitude=39.9606723675476&longitude=116.3498382568359 [32m200 [0m3.225 ms - 90[0m
+Time:  1463285669247
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m1.726 ms - -[0m
+Time:  1463285671479
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m10.422 ms - -[0m
+Time:  1463285701951
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137465074912784229',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137465077077063028',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137465077987084458',
+  result: 
+   { location: { lat: 37.330341, lng: -122.02916 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+[0mGET /s/getRecent?user=dcy&1463285701821 [32m200 [0m1624.953 ms - 599[0m
+Time:  1463285720263
+[ RowDataPacket { gps_lat: '39.983171', gps_lon: '116.308479' } ]
+39.983171
+http://apis.map.qq.com/ws/distance/v1/?mode=walking&from=39.983171,116.308479&to=39.9606479628184,116.3498382568359&key=WEGBZ-JPQK4-R53U5-DGPG2-UIAHF-AOBRL
+{ status: 0,
+  message: 'query ok',
+  result: { elements: [ [Object] ] } }
+[0mGET /s/distance?project_id=%E5%8C%97%E4%BA%AC%E5%A4%A7%E5%AD%A6&latitude=39.9606479628184&longitude=116.3498382568359 [32m200 [0m159.268 ms - 34[0m
+Time:  1463285730352
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m2.412 ms - -[0m
+Time:  1463285732550
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m10.017 ms - -[0m
+Time:  1463285739379
+[ RowDataPacket { gps_lat: null, gps_lon: null } ]
+null
+[0mGET /s/distance?project_id=%E5%8C%97%E5%B8%88&latitude=39.96135287545611&longitude=116.3498382568359 [32m200 [0m1.502 ms - 90[0m
+Time:  1463285863580
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m3.129 ms - -[0m
+Time:  1463285865675
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m11.249 ms - -[0m
+Time:  1463286197508
+[0mGET /s [36m304 [0m1.951 ms - -[0m
+Time:  1463286199598
+[0mGET /s [36m304 [0m3.645 ms - -[0m
+Time:  1463286200468
+[0mGET /s [36m304 [0m0.628 ms - -[0m
+Time:  1463286201180
+[0mGET /s [36m304 [0m1.042 ms - -[0m
+Time:  1463286201865
+[0mGET /s [36m304 [0m0.782 ms - -[0m
+Time:  1463286202674
+[0mGET /s [36m304 [0m2.356 ms - -[0m
+Time:  1463286204361
+[0mGET /s [36m304 [0m0.628 ms - -[0m
+Time:  1463289099157
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [32m200 [0m4.919 ms - 51[0m
+Time:  1463289099709
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [32m200 [0m16.541 ms - 220[0m
+Time:  1463289108997
+[ RowDataPacket { gps_lat: null, gps_lon: null } ]
+null
+[0mGET /s/distance?project_id=%E5%8C%97%E4%BA%A4&latitude=39.9618609860811&longitude=116.3498436800944 [32m200 [0m5.483 ms - 90[0m
+Time:  1463289161896
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m5.696 ms - -[0m
+Time:  1463289163751
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m7.336 ms - -[0m
+Time:  1463289214900
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m2.694 ms - -[0m
+Time:  1463289216675
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m9.695 ms - -[0m
+Time:  1463289272070
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m2.400 ms - -[0m
+Time:  1463289274007
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [32m200 [0m2.076 ms - 51[0m
+Time:  1463289277042
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m7.526 ms - -[0m
+Time:  1463289311940
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137480215347662466',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137480217742534243',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137480218820037437',
+  result: 
+   { location: { lat: 37.330341, lng: -122.02916 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县' } }
+[0mGET /s/getRecent?user=dcy&1463289309859 [32m200 [0m1236.846 ms - 635[0m
+Time:  1463289341467
+[ RowDataPacket { gps_lat: null, gps_lon: null } ]
+null
+[0mGET /s/distance?project_id=%E5%8C%97%E4%BA%A4&latitude=39.96189976097141&longitude=116.3498093900206 [32m200 [0m2.116 ms - 90[0m
+Time:  1463289574821
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m2.115 ms - -[0m
+Time:  1463289576502
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m6.758 ms - -[0m
+Time:  1463289608101
+[ RowDataPacket { gps_lat: null, gps_lon: null } ]
+null
+[0mGET /s/distance?project_id=%E5%8C%97%E4%BA%A4&latitude=39.96194640468185&longitude=116.3499875350412 [32m200 [0m1.349 ms - 90[0m
+Time:  1463289623005
+{ location: '39.96194640468185$116.3499875350412',
+  project_id: '北交',
+  user: 'dcy' }
+{ fieldName: 'photo',
+  originalFilename: 'image.jpg',
+  path: '/tmp/G-7Q6TSCBiI3MIm5BdB7_lAk.jpg',
+  headers: 
+   { 'content-disposition': 'form-data; name="photo"; filename="image.jpg"',
+     'content-type': 'image/jpg' },
+  size: 0,
+  name: 'image.jpg',
+  type: 'image/jpg' }
+insert into golocation (date,user,project_id,location,photo_url) values("1463289623023","dcy","北交","39.96194640468185$116.3499875350412","./uploads/dcy-1463289623023.jpg")
+[ '123' ]
+负责人出错
+-1
+[0mPOST /s/location [32m200 [0m23.991 ms - 55[0m
+saved in ./uploads/dcy-1463289623023.jpg
+Time:  1463289627963
+[0mGET /s/updateChargeman1?user=dcy&project_id=%E5%8C%97%E4%BA%A4 [32m200 [0m10.999 ms - 13[0m
+Time:  1463289631362
+[ RowDataPacket { gps_lat: null, gps_lon: null } ]
+null
+[0mGET /s/distance?project_id=%E5%8C%97%E4%BA%A4&latitude=39.96194640468185&longitude=116.3499875350412 [36m304 [0m1.686 ms - -[0m
+Time:  1463289661062
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m2.850 ms - -[0m
+Time:  1463289663049
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m10.124 ms - -[0m
+Time:  1463289677362
+[ RowDataPacket { gps_lat: null, gps_lon: null } ]
+null
+[0mGET /s/distance?project_id=%E5%8C%97%E4%BA%A4&latitude=39.96190702154579&longitude=116.3498140856777 [32m200 [0m1.440 ms - 90[0m
+Time:  1463289685250
+{ location: '39.96190702154579$116.3498140856777',
+  project_id: '北交',
+  user: 'dcy' }
+{ fieldName: 'photo',
+  originalFilename: 'image.jpg',
+  path: '/tmp/smlCjFBFoS6OcnLd4AeI6x25.jpg',
+  headers: 
+   { 'content-disposition': 'form-data; name="photo"; filename="image.jpg"',
+     'content-type': 'image/jpg' },
+  size: 0,
+  name: 'image.jpg',
+  type: 'image/jpg' }
+insert into golocation (date,user,project_id,location,photo_url) values("1463289685258","dcy","北交","39.96190702154579$116.3498140856777","./uploads/dcy-1463289685258.jpg")
+[ '123' ]
+负责人出错
+-1
+[0mPOST /s/location [32m200 [0m10.420 ms - 55[0m
+saved in ./uploads/dcy-1463289685258.jpg
+Time:  1463289689856
+[0mGET /s/updateChargeman1?user=dcy&project_id=%E5%8C%97%E4%BA%A4 [36m304 [0m7.560 ms - -[0m
+system
+system
+数据库成功连接
+进入数据库
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE :::3000
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at Server._listen2 (net.js:1234:14)
+    at listen (net.js:1270:10)
+    at Server.listen (net.js:1366:5)
+    at EventEmitter.listen (/root/project/project_manage_system/node_modules/express/lib/application.js:617:24)
+    at Object.<anonymous> (/root/project/project_manage_system/app.js:133:5)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+Time:  1463289849533
+[0mGET /s [36m304 [0m0.744 ms - -[0m
+Time:  1463289869298
+[0mGET /s [32m200 [0m0.772 ms - 21[0m
+Time:  1463290096828
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m3.183 ms - -[0m
+Time:  1463290098598
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+[ RowDataPacket { id: '东京大学' } ]
+{ '日本区': [ '东京大学' ] }
+当前操作朝阳区
+[ RowDataPacket { id: '中央财经' }, RowDataPacket { id: '外经贸' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ] }
+当前操作东城区
+[ RowDataPacket { id: '北交' } ]
+{ '日本区': [ '东京大学' ], '朝阳区': [ '中央财经', '外经贸' ], '东城区': [ '北交' ] }
+当前操作大兴区
+[ RowDataPacket { id: '北京大学' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ] }
+当前操作海淀区
+[ RowDataPacket { id: '北师' },
+  RowDataPacket { id: '北航' },
+  RowDataPacket { id: '北邮' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ] }
+当前操作昌平区
+[ RowDataPacket { id: '北邮宏福校区' },
+  RowDataPacket { id: '北邮沙河校区' } ]
+{ '日本区': [ '东京大学' ],
+  '朝阳区': [ '中央财经', '外经贸' ],
+  '东城区': [ '北交' ],
+  '大兴区': [ '北京大学' ],
+  '海淀区': [ '北师', '北航', '北邮' ],
+  '昌平区': [ '北邮宏福校区', '北邮沙河校区' ] }
+null
+[0mGET /s/updateProject [36m304 [0m29.127 ms - -[0m
+Time:  1463290107088
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137483549621661047',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137483550544476219',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137483551392326358',
+  result: 
+   { location: { lat: 37.330341, lng: -122.02916 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137483553556587947',
+  result: 
+   { location: { lat: 39.963284, lng: 116.356158 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137483554520649341',
+  result: 
+   { location: { lat: 39.963245, lng: 116.355984 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=dcy&1463290107002 [32m200 [0m1401.490 ms - 1080[0m
+Time:  1463290113068
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137483574695250532',
+  result: 
+   { location: { lat: 37.337566, lng: -122.041202 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'HomesteadRoad',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县HomesteadRoad' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137483575668329467',
+  result: 
+   { location: { lat: 37.33382, lng: -122.041519 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'FloraVistaAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县FloraVistaAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137483576616675435',
+  result: 
+   { location: { lat: 37.330341, lng: -122.02916 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137483577493359926',
+  result: 
+   { location: { lat: 39.963284, lng: 116.356158 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137483578453998067',
+  result: 
+   { location: { lat: 39.963245, lng: 116.355984 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=dcy&1463290112913 [32m200 [0m1115.514 ms - 1116[0m
+Time:  1463290186256
+[ RowDataPacket { gps_lat: null, gps_lon: null } ]
+null
+[0mGET /s/distance?project_id=%E5%8C%97%E4%BA%A4&latitude=39.96193793548453&longitude=116.3498939967105 [32m200 [0m2.907 ms - 90[0m
+Time:  1463290218866
+{ location: '39.96193793548453$116.3498939967105',
+  project_id: '北交',
+  user: 'dcy' }
+{ fieldName: 'photo',
+  originalFilename: 'image.jpg',
+  path: '/tmp/odtKFbsl1F9jq3zdwqmxw4i-.jpg',
+  headers: 
+   { 'content-disposition': 'form-data; name="photo"; filename="image.jpg"',
+     'content-type': 'image/jpg' },
+  size: 0,
+  name: 'image.jpg',
+  type: 'image/jpg' }
+insert into golocation (date,user,project_id,location,photo_url) values("1463290218941","dcy","北交","39.96193793548453$116.3498939967105","./uploads/dcy-1463290218941.jpg")
+[ '123' ]
+负责人出错
+-1
+[0mPOST /s/location [32m200 [0m79.433 ms - 55[0m
+saved in ./uploads/dcy-1463290218941.jpg
+Time:  1463290223398
+[0mGET /s/updateChargeman1?user=dcy&project_id=%E5%8C%97%E4%BA%A4 [36m304 [0m8.277 ms - -[0m
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (/root/project/project_manage_system/node_modules/mysql/lib/protocol/Protocol.js:109:13)
+    at Socket.<anonymous> (/root/project/project_manage_system/node_modules/mysql/lib/Connection.js:102:28)
+    at emitNone (events.js:72:20)
+    at Socket.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:913:12)
+    at nextTickCallbackWith2Args (node.js:442:9)
+    at process._tickCallback (node.js:356:17)
+system
+system
+数据库成功连接
+进入数据库
+监听3000端口
+[0mGET /favicon.ico [33m404 [0m506.853 ms - 1166[0m
+Time:  1463316273884
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [32m200 [0m39.974 ms - 51[0m
+system
+system
+数据库成功连接
+进入数据库
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE :::3000
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at Server._listen2 (net.js:1234:14)
+    at listen (net.js:1270:10)
+    at Server.listen (net.js:1366:5)
+    at EventEmitter.listen (/root/project/project_manage_system/node_modules/express/lib/application.js:617:24)
+    at Object.<anonymous> (/root/project/project_manage_system/app.js:133:5)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+Time:  1463324413405
+[0mGET /s/getapply [33m404 [0m63.529 ms - 1166[0m
+[0mGET /web/img/favicon.ico [33m404 [0m57.016 ms - 1166[0m
+[0mGET /web/js/dist/jquery-migrate.min.map [33m404 [0m69.143 ms - 1166[0m
+[0mGET /web/js/dist/jquery-migrate.min.map [33m404 [0m53.479 ms - 1166[0m
+Time:  1463324492483
+[0mGET /s/getapply [33m404 [0m55.845 ms - 1166[0m
+[0mGET /stylesheets/style.css [32m200 [0m17.257 ms - 111[0m
+system
+system
+数据库成功连接
+进入数据库
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: listen EADDRINUSE :::3000
+    at Object.exports._errnoException (util.js:870:11)
+    at exports._exceptionWithHostPort (util.js:893:20)
+    at Server._listen2 (net.js:1234:14)
+    at listen (net.js:1270:10)
+    at Server.listen (net.js:1366:5)
+    at EventEmitter.listen (/root/project/project_manage_system/node_modules/express/lib/application.js:617:24)
+    at Object.<anonymous> (/root/project/project_manage_system/app.js:133:5)
+    at Module._compile (module.js:409:26)
+    at Object.Module._extensions..js (module.js:416:10)
+    at Module.load (module.js:343:32)
+Time:  1463324550992
+[0mGET /s/getapply [33m404 [0m21.685 ms - 1166[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.742 ms - -[0m
+[0mGET /web/js/dist/jquery-migrate.min.map [33m404 [0m22.699 ms - 1166[0m
+Time:  1463324702678
+[0mGET /s/getapply [33m404 [0m19.111 ms - 1166[0m
+Time:  1463324785061
+[0mGET /s [32m200 [0m1.203 ms - 21[0m
+Time:  1463324790819
+[0mGET /s/getapply [33m404 [0m24.181 ms - 1166[0m
+[0mGET /stylesheets/style.css [32m200 [0m1.009 ms - 111[0m
+Time:  1463325030916
+[0mGET /s/getapply [33m404 [0m15.566 ms - 1166[0m
+[0mGET /stylesheets/style.css [32m200 [0m0.823 ms - 111[0m
+Time:  1463325034795
+[0mGET /s [32m200 [0m0.695 ms - 21[0m
+Terminated
+system
+system
+数据库成功连接
+进入数据库
+监听3000端口
+Time:  1463326993648
+[0mGET /s/updateChargeman?user=dcy&project_id=%E5%8C%97%E9%82%AE&flag=1&st=12273837738 [36m304 [0m8.010 ms - -[0m
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (/root/project/project_manage_system/node_modules/mysql/lib/protocol/Protocol.js:109:13)
+    at Socket.<anonymous> (/root/project/project_manage_system/node_modules/mysql/lib/Connection.js:102:28)
+    at emitNone (events.js:72:20)
+    at Socket.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:913:12)
+    at nextTickCallbackWith2Args (node.js:442:9)
+    at process._tickCallback (node.js:356:17)
+system
+system
+数据库成功连接
+进入数据库
+监听3000端口
+[0mGET /favicon.ico [33m404 [0m520.527 ms - 1166[0m
+Time:  1463379534785
+[0mGET /s [32m200 [0m1.838 ms - 21[0m
+[0mGET /web/img/favicon.ico [33m404 [0m62.563 ms - 1166[0m
+Time:  1463379556198
+[]
+[0mGET /s/getapply [32m200 [0m6.730 ms - 2[0m
+Time:  1463383065148
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137873444056543301',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137873445159504409',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137873447248191732',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137873448305233417',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [32m200 [0m1235.703 ms - 846[0m
+Time:  1463383084144
+[]
+[0mGET /s/getapply [36m304 [0m3.275 ms - -[0m
+Time:  1463383090353
+[]
+[0mGET /s/getapply [36m304 [0m1.985 ms - -[0m
+Time:  1463383141262
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137873763163522377',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137873765436699499',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137873766401371970',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137873767391223957',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [32m200 [0m1211.670 ms - 846[0m
+Time:  1463383142898
+[]
+[0mGET /s/getapply [36m304 [0m2.522 ms - -[0m
+Time:  1463383146980
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137873787271941006',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137873788207435740',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137873790337591665',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137873791235998864',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [32m200 [0m1186.783 ms - 846[0m
+Time:  1463383289417
+[]
+[0mGET /s/getapply [36m304 [0m1.887 ms - -[0m
+Time:  1463383301487
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874435299910818',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874436143442421',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874437171398417',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874438106728487',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [32m200 [0m877.628 ms - 895[0m
+Time:  1463383310836
+[]
+[0mGET /s/getapply [36m304 [0m2.992 ms - -[0m
+Time:  1463383311973
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874479335908622',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874480133303197',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874481018301629',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874482037083950',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [36m304 [0m885.207 ms - -[0m
+Time:  1463383325493
+[]
+[0mGET /s/getapply [36m304 [0m1.348 ms - -[0m
+Time:  1463383327277
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874543458903054',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874544465611922',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874546558403195',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [0m- [0m- ms - -[0m
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874547535839243',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+Time:  1463383328584
+[]
+[0mGET /s/getapply [36m304 [0m2.629 ms - -[0m
+Time:  1463383329418
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874552317472110',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874554724715425',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874555609997556',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874556549325538',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [32m200 [0m1210.791 ms - 846[0m
+Time:  1463383331362
+[]
+[0mGET /s/getapply [36m304 [0m1.609 ms - -[0m
+Time:  1463383332626
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874566037194894',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874568129873696',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874570268806651',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137874571195362549',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [32m200 [0m1480.199 ms - 797[0m
+Time:  1463385047833
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137881759922513769',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137881760920830143',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137881763135703794',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137881764029090786',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [32m200 [0m1156.025 ms - 846[0m
+Time:  1463386950712
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137889741258924095',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137889742185865535',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137889743100774249',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137889744127900459',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [32m200 [0m892.267 ms - 895[0m
+Time:  1463386954975
+[]
+[0mGET /s/getapply [36m304 [0m1.777 ms - -[0m
+Time:  1463386967137
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137889810200740380',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137889811178449201',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137889811992360700',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137889812915107846',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [36m304 [0m886.713 ms - -[0m
+[0mGET /web/js/dist/jquery-migrate.min.map [33m404 [0m75.591 ms - 1166[0m
+Time:  1463387132635
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137890504307721282',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137890505243486122',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137890506162112875',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137890507110302086',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [36m304 [0m881.300 ms - -[0m
+Time:  1463388370260
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137895695241297617',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137895696235659701',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137895697070010660',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137895698228264887',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [36m304 [0m929.005 ms - -[0m
+Time:  1463388410644
+[]
+[0mGET /s/getapply [36m304 [0m3.087 ms - -[0m
+Time:  1463388413072
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137895874778477289',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137895875852701091',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137895877836125919',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [0m- [0m- ms - -[0m
+{ status: 0,
+  message: 'query ok',
+  request_id: '6137895878762997325',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+Time:  1463388414458
+[]
+[0mGET /s/getapply [36m304 [0m1.383 ms - -[0m
+Hangup
+system
+system
+数据库成功连接
+进入数据库
+监听3000端口
+[0mGET /favicon.ico [33m404 [0m509.683 ms - 1166[0m
+[0mGET /web/img/favicon.ico [33m404 [0m68.781 ms - 1166[0m
+Time:  1463452124073
+[]
+[0mGET /s/getapply [36m304 [0m7.815 ms - -[0m
+Time:  1463452127137
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163111074982670',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163112052328868',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163114304597648',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163115239927695',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [32m200 [0m1227.023 ms - 846[0m
+Time:  1463452140013
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163165135364954',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163166049290193',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163166926333258',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163167802538461',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [32m200 [0m874.072 ms - 895[0m
+Time:  1463452147737
+[]
+[0mGET /s/getapply [36m304 [0m2.771 ms - -[0m
+Time:  1463452149058
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163203068652254',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163204167560216',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163205047956071',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163205932954452',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [36m304 [0m921.322 ms - -[0m
+Time:  1463452153647
+[]
+[0mGET /s/getapply [36m304 [0m1.407 ms - -[0m
+Time:  1463452154716
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163226778646998',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163227730754240',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163228674786596',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163229681419847',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [36m304 [0m931.692 ms - -[0m
+Time:  1463452156007
+[]
+[0mGET /s/getapply [36m304 [0m1.702 ms - -[0m
+Time:  1463452156990
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163236274957686',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163237247559537',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163238015787382',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138163238993217939',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [36m304 [0m878.352 ms - -[0m
+[0mGET /web/jindu.html [33m404 [0m72.601 ms - 1166[0m
+[0mGET /stylesheets/style.css [32m200 [0m0.815 ms - 111[0m
+[0mGET /favicon.ico [33m404 [0m48.926 ms - 1166[0m
+[0mGET /web/xinxi.html [33m404 [0m43.212 ms - 1166[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.538 ms - -[0m
+[0mGET /web/jindu.html [33m404 [0m29.246 ms - 1166[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.406 ms - -[0m
+[0mGET /web/img/favicon.ico [33m404 [0m17.896 ms - 1166[0m
+[0mGET /web/zhiliang.html [33m404 [0m22.147 ms - 1166[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.333 ms - -[0m
+Time:  1463452399292
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138164252596281716',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138164253498057321',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138164254346135257',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138164255305871565',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [36m304 [0m886.839 ms - -[0m
+[0mGET /web/jindu.html [33m404 [0m20.432 ms - 1166[0m
+[0mGET /stylesheets/style.css [36m304 [0m1.389 ms - -[0m
+[0mGET /web/zhiliang.html [33m404 [0m18.552 ms - 1166[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.392 ms - -[0m
+Time:  1463452435170
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138164402925005376',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138164405357720241',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138164406205106270',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138164407215797445',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [32m200 [0m1269.657 ms - 846[0m
+Time:  1463452519168
+[]
+[0mGET /s/getapply [36m304 [0m1.774 ms - -[0m
+Time:  1463453531110
+[]
+[0mGET /s/getapply [36m304 [0m2.286 ms - -[0m
+Time:  1463478961092
+[]
+[0mGET /s/getapply [36m304 [0m1.446 ms - -[0m
+Time:  1463478964651
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138275676228750047',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138275678498144795',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138275680603406645',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138275682570815489',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [32m200 [0m1860.240 ms - 797[0m
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (/root/project/project_manage_system/node_modules/mysql/lib/protocol/Protocol.js:109:13)
+    at Socket.<anonymous> (/root/project/project_manage_system/node_modules/mysql/lib/Connection.js:102:28)
+    at emitNone (events.js:72:20)
+    at Socket.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:913:12)
+    at nextTickCallbackWith2Args (node.js:442:9)
+    at process._tickCallback (node.js:356:17)
+system
+system
+数据库成功连接
+进入数据库
+监听3000端口
+Time:  1463500112563
+[]
+[0mGET /s/getapply [36m304 [0m9.792 ms - -[0m
+Time:  1463500136672
+[]
+[0mGET /s/getapply [36m304 [0m3.976 ms - -[0m
+[0mGET /web/js/dist/jquery-migrate.min.map [33m404 [0m531.889 ms - 1166[0m
+Time:  1463500153259
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138364547285115327',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138364548359210814',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138364550657412233',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138364551513328061',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [32m200 [0m1266.041 ms - 846[0m
+Time:  1463500163665
+[]
+[0mGET /s/getapply [36m304 [0m2.660 ms - -[0m
+Time:  1463500167599
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138364607368431132',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138364608119500580',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138364610555718183',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138364611478849915',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [36m304 [0m1209.178 ms - -[0m
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (/root/project/project_manage_system/node_modules/mysql/lib/protocol/Protocol.js:109:13)
+    at Socket.<anonymous> (/root/project/project_manage_system/node_modules/mysql/lib/Connection.js:102:28)
+    at emitNone (events.js:72:20)
+    at Socket.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:913:12)
+    at nextTickCallbackWith2Args (node.js:442:9)
+    at process._tickCallback (node.js:356:17)
+system
+system
+数据库成功连接
+进入数据库
+监听3000端口
+Time:  1463537833526
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138522589687442548',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138522590748797129',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138522592937552149',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138522593840000085',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [36m304 [0m1219.079 ms - -[0m
+Time:  1463538190901
+[]
+[0mGET /s/getapply [36m304 [0m3.092 ms - -[0m
+[0mOPTIONS / [32m200 [0m1.241 ms - 8[0m
+[0mGET /nice%20ports%2C/Tri%6Eity.txt%2ebak [33m404 [0m512.176 ms - 1166[0m
+[0mOPTIONS / [32m200 [0m0.717 ms - 8[0m
+[0mGET /nice%20ports%2C/Tri%6Eity.txt%2ebak [33m404 [0m65.682 ms - 1166[0m
+Time:  1463538561514
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m7.205 ms - -[0m
+Time:  1463538563655
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+当前操作朝阳区
+当前操作东城区
+当前操作大兴区
+当前操作海淀区
+当前操作昌平区
+null
+[0mGET /s/updateProject [36m304 [0m8.570 ms - -[0m
+Time:  1463539148330
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [32m200 [0m2.092 ms - 51[0m
+Time:  1463539148485
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+当前操作朝阳区
+当前操作东城区
+当前操作大兴区
+当前操作海淀区
+当前操作昌平区
+null
+[0mGET /s/updateProject [32m200 [0m9.695 ms - 220[0m
+Time:  1463539293091
+[ RowDataPacket { gps_lat: null, gps_lon: null } ]
+null
+[0mGET /s/distance?project_id=%E5%8C%97%E4%BA%A4&latitude=37.33054431&longitude=-122.03058311 [32m200 [0m2.909 ms - 90[0m
+Time:  1463539321340
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m2.336 ms - -[0m
+Time:  1463539323344
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+当前操作朝阳区
+当前操作东城区
+当前操作大兴区
+当前操作海淀区
+当前操作昌平区
+null
+[0mGET /s/updateProject [36m304 [0m5.026 ms - -[0m
+Time:  1463539329027
+[0mGET /s/distance?project_id=0&latitude=37.33771953&longitude=-122.02827141 [32m200 [0m1.415 ms - 47[0m
+Time:  1463539347980
+[ RowDataPacket { gps_lat: null, gps_lon: null } ]
+null
+[0mGET /s/distance?project_id=%E5%8C%97%E4%BA%A4&latitude=37.33771953&longitude=-122.02827141 [32m200 [0m1.552 ms - 90[0m
+Time:  1463539577992
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138529906617288988',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138529908550382260',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138529909419363255',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138529910463466909',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=dcy&1463539579666 [32m200 [0m1147.961 ms - 846[0m
+Time:  1463539762965
+RowDataPacket {
+  id: 1,
+  user_name: 'dcy',
+  password: 'dcy0701',
+  area: '北京',
+  type: 0 }
+[0mGET /s/login?user=dcy&pass=dcy0701 [36m304 [0m2.303 ms - -[0m
+Time:  1463539764976
+[ '日本区', '朝阳区', '东城区', '大兴区', '海淀区', '昌平区' ]
+当前操作日本区
+当前操作朝阳区
+当前操作东城区
+当前操作大兴区
+当前操作海淀区
+当前操作昌平区
+null
+[0mGET /s/updateProject [36m304 [0m4.486 ms - -[0m
+Time:  1463539850678
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138531050299408908',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138531052111194195',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138531054526988926',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138531055361581634',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=dcy&1463539852347 [32m200 [0m1463.003 ms - 797[0m
+Time:  1463539908095
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138531291085228663',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138531291907745228',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138531294021269839',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138531294730710988',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [32m200 [0m1125.813 ms - 895[0m
+Time:  1463540006447
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138531703662163043',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138531704476337818',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138531706615268551',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138531707626096137',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=all [32m200 [0m1200.649 ms - 846[0m
+Time:  1463540199549
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138532513620774597',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: { nation: '美国', locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138532515754917494',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138532516632146019',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138532517642282477',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=dcy&1463540201249 [32m200 [0m1210.731 ms - 846[0m
+Time:  1463540203252
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138532529059565544',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138532530040716903',
+  result: 
+   { location: { lat: 37.334686, lng: -122.023578 },
+     address_component: 
+      { nation: '美国',
+        ad_level_1: '加利福尼亚州',
+        ad_level_2: '圣塔克拉拉县',
+        street: 'LucilleAvenue',
+        locality: 'Cupertino' },
+     ad_info: { location: [Object] },
+     address: '美国加利福尼亚州圣塔克拉拉县LucilleAvenue' } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138532530901303678',
+  result: 
+   { location: { lat: 39.963254, lng: 116.356139 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+{ status: 0,
+  message: 'query ok',
+  request_id: '6138532531945550219',
+  result: 
+   { location: { lat: 39.963275, lng: 116.356112 },
+     address: '北京市海淀区西土城路',
+     formatted_addresses: { recommend: '海淀区北太平庄北京邮电大学内(西土城路东)', rough: '海淀区北太平庄北京邮电大学内' },
+     address_component: 
+      { nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区',
+        street: '西土城路',
+        street_number: '' },
+     ad_info: 
+      { adcode: '110108',
+        name: '中国,北京市,北京市,海淀区',
+        location: [Object],
+        nation: '中国',
+        province: '北京市',
+        city: '北京市',
+        district: '海淀区' },
+     address_reference: 
+      { crossroad: [Object],
+        street: [Object],
+        street_number: [Object],
+        famous_area: [Object],
+        town: [Object],
+        water: [Object],
+        landmark_l1: [Object],
+        landmark_l2: [Object] } } }
+[0mGET /s/getRecent?user=dcy&1463540204973 [32m200 [0m910.576 ms - 895[0m
+events.js:141
+      throw er; // Unhandled 'error' event
+      ^
+
+Error: Connection lost: The server closed the connection.
+    at Protocol.end (/root/project/project_manage_system/node_modules/mysql/lib/protocol/Protocol.js:109:13)
+    at Socket.<anonymous> (/root/project/project_manage_system/node_modules/mysql/lib/Connection.js:102:28)
+    at emitNone (events.js:72:20)
+    at Socket.emit (events.js:166:7)
+    at endReadableNT (_stream_readable.js:913:12)
+    at nextTickCallbackWith2Args (node.js:442:9)
+    at process._tickCallback (node.js:356:17)
