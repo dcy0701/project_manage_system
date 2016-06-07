@@ -155,7 +155,7 @@ serviceRouter.post('/location',multipartMiddleware,function(req, res){
     var photo_base64 = imageBuf.toString("base64");
     var buffer = photo_base64.replace(/^data:image\/\w+;base64,/, "");
     //将buffer写入文件中
-    console.log(buffer);
+    // console.log(buffer);
     photoUrl = './uploads/'+user+'-'+TimeStamp+'.jpg';
     fs.writeFile(photoUrl, buffer, 'base64', function(err) {
       if(err) console.log(err);
