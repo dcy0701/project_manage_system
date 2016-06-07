@@ -288,7 +288,7 @@ serviceRouter.get('/updateChargeman',function(req,res){
         console.log(err);
         res.json({err:err});
       }else{
-          
+
       }
     });
   }
@@ -300,7 +300,7 @@ serviceRouter.get('/updateChargeman',function(req,res){
     }else{
     }res.json({status:'ok'});
   });
-  
+
 
 });
 
@@ -378,7 +378,7 @@ serviceRouter.get('/getRecent',function(req,res){
           //   callback(null, item);
           // })
         },function(err){
-          res.json(resu.reverse());
+          res.json(resu);
         })
       }
     });
@@ -426,7 +426,7 @@ serviceRouter.get('/getRecent',function(req,res){
           //   callback(null, item);
           // })
         },function(err){
-          res.json(resu.reverse());
+          res.json(resu);
         })
       }
     });
